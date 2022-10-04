@@ -1,3 +1,4 @@
+import 'package:chance_app/views/roommates/userCard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -63,7 +64,7 @@ class User {
   });
 }
 
-List<User> students = [
+List<User> users = [
   User(
       id: 1,
       voucherId: 0,
@@ -343,10 +344,228 @@ class Roommate extends StatefulWidget {
 }
 
 class _RoommateState extends State<Roommate> {
+  var currentMatch = users[0];
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(child: Text('Roommmates')),
+    return Scaffold(
+      appBar: AppBar(title: Text('Matches')),
+      body: Stack(
+        children: [
+          SingleChildScrollView(
+            child: Container(
+              margin: const EdgeInsets.only(bottom: 150.0),
+              child: Column(
+                children: [
+                  Container(
+                    height: MediaQuery.of(context).size.height - 400,
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 8.0, horizontal: 20),
+                    child: userCard(
+                        age: currentMatch.age,
+                        name: currentMatch.name,
+                        jobTitle: currentMatch.jobTitle,
+                        profileImg: currentMatch.profileImg),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 8.0, horizontal: 20),
+                    child: Column(children: [
+                      Text(
+                        'About Me',
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                      Text(
+                        currentMatch.bio,
+                        style: const TextStyle(
+                          fontSize: 16,
+                        ),
+                      )
+                    ]),
+                    decoration:
+                        BoxDecoration(border: Border.all(color: Colors.grey)),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 8.0, horizontal: 20),
+                    child: Column(children: [
+                      Text(
+                        'My Preferences',
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            '- Gender: ',
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 16,
+                            ),
+                          ),
+                          Text(
+                            currentMatch.preferences['gender'],
+                            style: const TextStyle(
+                              fontSize: 16,
+                            ),
+                          )
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            '- Age Range: ',
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 16,
+                            ),
+                          ),
+                          Text(
+                            currentMatch.preferences['ageRange'],
+                            style: const TextStyle(
+                              fontSize: 16,
+                            ),
+                          )
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            '- Number of Kids: ',
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 16,
+                            ),
+                          ),
+                          Text(
+                            currentMatch.preferences['kidsNumber'],
+                            style: const TextStyle(
+                              fontSize: 16,
+                            ),
+                          )
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            '- Ideal Location: ',
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 16,
+                            ),
+                          ),
+                          Text(
+                            currentMatch.preferences['idealLocation'],
+                            style: const TextStyle(
+                              fontSize: 16,
+                            ),
+                          )
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            '- Lease: ',
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 16,
+                            ),
+                          ),
+                          Text(
+                            currentMatch.preferences['lease'],
+                            style: const TextStyle(
+                              fontSize: 16,
+                            ),
+                          )
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            '- Smoking: ',
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w700,
+                              fontSize: 16,
+                            ),
+                          ),
+                          Text(
+                            currentMatch.preferences['smoking'],
+                            style: const TextStyle(
+                              fontSize: 16,
+                            ),
+                          )
+                        ],
+                      ),
+                    ]),
+                    decoration:
+                        BoxDecoration(border: Border.all(color: Colors.grey)),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Positioned(
+            width: MediaQuery.of(context).size.width, // This is the screen size
+            bottom: 20,
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Align(
+                    alignment: Alignment.bottomLeft,
+                    child: FloatingActionButton(
+                      onPressed: () {
+                        // Add your onPressed code here!
+                      },
+                      backgroundColor: Colors.white,
+                      child: const Icon(
+                        Icons.close,
+                        color: Colors.red,
+                        size: 40,
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.bottomCenter,
+                    child: FloatingActionButton(
+                      onPressed: () {
+                        // Add your onPressed code here!
+                      },
+                      backgroundColor: Colors.white,
+                      child: const Icon(
+                        Icons.star_rounded,
+                        color: Colors.yellow,
+                        size: 40,
+                      ),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: FloatingActionButton(
+                      onPressed: () {
+                        // Add your onPressed code here!
+                      },
+                      backgroundColor: Colors.white,
+                      child: const Icon(
+                        Icons.favorite,
+                        color: Colors.pink,
+                        size: 40,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }

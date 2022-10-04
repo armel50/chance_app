@@ -9,9 +9,6 @@ import 'package:chance_app/views/rooms/rooms.dart';
 import 'package:chance_app/views/messages/messages.dart';
 import 'package:chance_app/views/more/more.dart';
 
-
-
-
 // This app file contains all the navigation for the different views.
 class App extends StatefulWidget {
   const App({Key? key}) : super(key: key);
@@ -29,12 +26,12 @@ class _AppState extends State<App> {
       _selectedIndex = index;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: _views[_selectedIndex],
-
-bottomNavigationBar: BottomNavigationBar(
+      bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
         selectedItemColor: Colors.green,
         unselectedItemColor: Colors.black,
@@ -43,22 +40,26 @@ bottomNavigationBar: BottomNavigationBar(
         selectedFontSize: 14,
         elevation: 10,
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem( // Matches tab
+          BottomNavigationBarItem(
+            // Matches tab
             icon: Icon(Icons.people_outline),
             label: 'Roomies',
             backgroundColor: Colors.white,
           ),
-          BottomNavigationBarItem( // Rooms or listing tab
+          BottomNavigationBarItem(
+            // Rooms or listing tab
             icon: Icon(Icons.apartment_outlined),
             label: 'Rooms',
             backgroundColor: Colors.white,
           ),
-          BottomNavigationBarItem( // Messages tab
+          BottomNavigationBarItem(
+            // Messages tab
             icon: Icon(Icons.message_outlined),
             label: 'Messages',
             backgroundColor: Colors.white,
           ),
-          BottomNavigationBarItem( // More tab
+          BottomNavigationBarItem(
+            // More tab
             icon: Icon(Icons.more_horiz_outlined),
             label: 'More',
             backgroundColor: Colors.white,
