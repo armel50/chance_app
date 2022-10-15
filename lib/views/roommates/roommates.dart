@@ -1,5 +1,6 @@
-import 'package:chance_app/views/roommates/userCard.dart';
+import 'package:chance_app/views/roommates/matchProfile.dart';
 import 'package:flutter/material.dart';
+import 'package:chance_app/views/roommates/userCard.dart';
 
 class Preference {
   int id;
@@ -269,8 +270,9 @@ List<User> users = [
       id: 8,
       voucherId: 4,
       email: 'michealdoe@gmail.com',
-      name: 'Micheal Doe',
-      profileImg: 'https://unsplash.com/photos/DzAFv1iVMGg',
+      name: 'Michelle Doe',
+      profileImg:
+          'https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=761&q=80',
       age: 26,
       bio:
           'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed.',
@@ -361,10 +363,20 @@ class Roommate extends StatefulWidget {
 }
 
 class _RoommateState extends State<Roommate> {
+  bool stateChanged = false;
+  var currentIndex = 0;
   var currentMatch = users[0];
 
   @override
   Widget build(BuildContext context) {
+    var updateUser = () {
+      setState(() {
+        stateChanged = true;
+        currentIndex =
+            currentIndex + 1 > users.length - 1 ? 0 : currentIndex + 1;
+        currentMatch = users[currentIndex];
+      });
+    };
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -397,148 +409,45 @@ class _RoommateState extends State<Roommate> {
         ),
         backgroundColor: Colors.white,
       ),
-      body: Stack(
-        children: [
-          SingleChildScrollView(
-            child: Container(
-              margin: const EdgeInsets.only(bottom: 150.0),
-              child: Column(
-                children: [
-                  Container(
-                    height: MediaQuery.of(context).size.height - 400,
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 8.0, horizontal: 20),
-                    child: userCard(
-                        age: currentMatch.age,
-                        name: currentMatch.name,
-                        jobTitle: currentMatch.jobTitle,
-                        profileImg: currentMatch.profileImg),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 8.0, horizontal: 10),
-                    width: MediaQuery.of(context).size.width,
-                    constraints: BoxConstraints(
-                      maxHeight: double.infinity,
-                    ),
-                    child: Column(children: [
-                      Text(
-                        'About Me',
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                        ),
-                      ),
-                      Text(
-                        currentMatch.bio,
-                        style: const TextStyle(
-                          fontSize: 16,
-                        ),
-                      )
-                    ]),
-                    decoration:
-                        BoxDecoration(border: Border.all(color: Colors.grey)),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 8.0, horizontal: 10),
-                    constraints: BoxConstraints(
-                      maxHeight: double.infinity,
-                    ),
-                    width: MediaQuery.of(context).size.width,
-                    child: Column(children: [
-                      Text(
-                        'My Preferences',
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                        ),
-                      ),
-                      Wrap(
-                        spacing: 8.0, // gap between adjacent chips
-                        runSpacing: 4.0, // gap between lines
-                        children: currentMatch.preferences.map((e) {
-                          return Chip(
-                            label: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Text(
-                                  "${e['title']}:",
-                                  style: const TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 16,
-                                  ),
-                                ),
-                                Text(e['resp'])
-                              ],
-                            ),
-                          );
-                        }).toList(),
-                      )
-                    ]),
-                    decoration:
-                        BoxDecoration(border: Border.all(color: Colors.grey)),
-                  ),
-                ],
-              ),
-            ),
-          ),
-          Positioned(
-            width: MediaQuery.of(context).size.width, // This is the screen size
-            bottom: 20,
-            child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Align(
-                    alignment: Alignment.bottomLeft,
-                    child: FloatingActionButton(
-                      onPressed: () {
-                        // Add your onPressed code here!
-                      },
-                      backgroundColor: Colors.white,
-                      child: const Icon(
-                        Icons.close,
-                        color: Colors.red,
-                        size: 40,
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.bottomCenter,
-                    child: FloatingActionButton(
-                      onPressed: () {
-                        // Add your onPressed code here!
-                      },
-                      backgroundColor: Colors.white,
-                      child: const Icon(
-                        Icons.star_rounded,
-                        color: Colors.yellow,
-                        size: 40,
-                      ),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.bottomRight,
-                    child: FloatingActionButton(
-                      onPressed: () {
-                        // Add your onPressed code here!
-                      },
-                      backgroundColor: Colors.white,
-                      child: const Icon(
-                        Icons.favorite,
-                        color: Colors.pink,
-                        size: 40,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          )
-        ],
+      body: Draggable(
+        child: matchProfile(
+          currentMatch: currentMatch,
+          updateUser: updateUser,
+        ),
+        feedback: Container(
+          height: MediaQuery.of(context).size.height - 400,
+          padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 20),
+          child: userCard(
+              age: currentMatch.age,
+              name: currentMatch.name,
+              jobTitle: currentMatch.jobTitle,
+              profileImg: currentMatch.profileImg),
+        ),
+        // onDraggableCanceled: (Velocity velocity, Offset offset) {
+        //   setState(() {
+        //     if (stateChanged == true) {
+        //       stateChanged = false;
+        //       currentIndex -= 1;
+        //     }
+        //     print(stateChanged);
+        //   });
+        // },
+        childWhenDragging: matchProfile(
+            updateUser: updateUser,
+            currentMatch: currentIndex + 1 < users.length - 1
+                ? users[currentIndex + 1]
+                : users[0]),
+        onDragEnd: (drag) {
+          if (drag.velocity.pixelsPerSecond.dx < 0) {
+            // Swipe left
+            print('swipe left');
+            updateUser();
+          } else {
+            // Swipe right
+            print('swipe right');
+            updateUser();
+          }
+        },
       ),
     );
   }

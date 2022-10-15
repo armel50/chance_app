@@ -10,13 +10,19 @@ class userCard extends StatelessWidget {
   String jobTitle;
   String profileImg;
 
-  userCard({required this.age, required this.name, required this.jobTitle, required this.profileImg});
+  userCard(
+      {required this.age,
+      required this.name,
+      required this.jobTitle,
+      required this.profileImg});
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
         Container(
+          height: MediaQuery.of(context).size.height - 400,
+          width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
               image: DecorationImage(
                   fit: BoxFit.cover, image: NetworkImage(profileImg)),
@@ -37,6 +43,8 @@ class userCard extends StatelessWidget {
               '$name, $age',
               style: const TextStyle(
                 fontWeight: FontWeight.bold,
+                color: Colors.white70,
+                decoration: TextDecoration.none,
                 fontSize: 30,
               ),
             ),
@@ -48,11 +56,13 @@ class userCard extends StatelessWidget {
           child: Container(
             child: Row(
               children: [
-                Icon(Icons.cases_outlined),
+                Icon(Icons.cases_outlined, color: Colors.white70,),
                 Text(
                   ' $jobTitle',
                   style: const TextStyle(
                     fontSize: 16,
+                    decoration: TextDecoration.none,
+                    color: Colors.white70
                   ),
                 )
               ],
