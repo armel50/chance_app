@@ -1,8 +1,5 @@
 import 'package:chance_app/views/roommates/userCard.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class Preference {
   int id;
@@ -41,7 +38,7 @@ class User {
   int age;
   String bio;
   List<String> hobbies;
-  Map<String, dynamic> preferences;
+  List<dynamic> preferences;
   String jobTitle;
   bool emailVerified;
   bool premiumUser;
@@ -74,20 +71,22 @@ List<User> users = [
           'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
       age: 30,
       bio:
-          'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed.',
+          'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed.It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed.It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed.',
       hobbies: ['Dancing', 'Gym', 'Drawing'],
-      preferences: {
-        "id": 1,
-        "gender": "All",
-        "ageRange": "18 - 100",
-        "kidsNumber": "0",
-        "petsAllowed": ['Cats', 'Dog'],
-        "idealLocation": "Arlington, Tx",
-        "lease": '4 months',
-        "housingType": ["Apartment", "House", "Townhouse", "Condo"],
-        "smoking": "Outside only",
-        "privprivateSpace": ["Bathroom", "Bedroom"],
-      },
+      preferences: [
+        {'title': 'Gender', 'resp': "All"},
+        {"title": "Age Range", "resp": "18 - 100"},
+        {"title": "Number of Kids", "resp": "0"},
+        {"title": "Pets Allowed", "resp": "Yes"},
+        {"title": "Ideal Location", "resp": "Arlington, Tx"},
+        {"title": "Lease", "resp": "4 months"},
+        {"title": "Smoking?", "resp": "Outside only"},
+        {'title': "Appartment", "resp": "Yes"},
+        {"title": "House", "resp": "Yes"},
+        {"title": "Condo", "resp": "Yes"},
+        {"title": "Private Bathroom", "resp": "Yes"},
+        {"title": "Private Bedroom", "resp": "Yes"}
+      ],
       jobTitle: 'Actor',
       emailVerified: true,
       premiumUser: true,
@@ -103,18 +102,20 @@ List<User> users = [
       bio:
           'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed.',
       hobbies: ['Dancing'],
-      preferences: {
-        "id": 2,
-        "gender": "All",
-        "ageRange": "18 - 100",
-        "kidsNumber": "0",
-        "petsAllowed": ['Cats', 'Dog'],
-        "idealLocation": "Arlington, Tx",
-        "lease": '4 months',
-        "housingType": ["Apartment", "House", "Townhouse", "Condo"],
-        "smoking": "Outside only",
-        "privprivateSpace": ["Bathroom", "Bedroom"],
-      },
+      preferences: [
+        {'title': 'Gender', 'resp': "All"},
+        {"title": "Age Range", "resp": "18 - 100"},
+        {"title": "Number of Kids", "resp": "0"},
+        {"title": "Pets Allowed", "resp": "Yes"},
+        {"title": "Ideal Location", "resp": "Arlington, Tx"},
+        {"title": "Lease", "resp": "4 months"},
+        {"title": "Smoking?", "resp": "Outside only"},
+        {'title': "Appartment", "resp": "Yes"},
+        {"title": "House", "resp": "Yes"},
+        {"title": "Condo", "resp": "Yes"},
+        {"title": "Private Bathroom", "resp": "Yes"},
+        {"title": "Private Bedroom", "resp": "Yes"}
+      ],
       jobTitle: 'Business Owner',
       emailVerified: true,
       premiumUser: true,
@@ -130,18 +131,20 @@ List<User> users = [
       bio:
           'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed.',
       hobbies: ['Dancing'],
-      preferences: {
-        "id": 3,
-        "gender": "All",
-        "ageRange": "18 - 100",
-        "kidsNumber": "0",
-        "petsAllowed": ['Cats', 'Dog'],
-        "idealLocation": "Arlington, Tx",
-        "lease": '4 months',
-        "housingType": ["Apartment", "House", "Townhouse", "Condo"],
-        "smoking": "Outside only",
-        "privprivateSpace": ["Bathroom", "Bedroom"],
-      },
+      preferences: [
+        {'title': 'Gender', 'resp': "All"},
+        {"title": "Age Range", "resp": "18 - 100"},
+        {"title": "Number of Kids", "resp": "0"},
+        {"title": "Pets Allowed", "resp": "Yes"},
+        {"title": "Ideal Location", "resp": "Arlington, Tx"},
+        {"title": "Lease", "resp": "4 months"},
+        {"title": "Smoking?", "resp": "Outside only"},
+        {'title': "Appartment", "resp": "Yes"},
+        {"title": "House", "resp": "Yes"},
+        {"title": "Condo", "resp": "Yes"},
+        {"title": "Private Bathroom", "resp": "Yes"},
+        {"title": "Private Bedroom", "resp": "Yes"}
+      ],
       jobTitle: 'Engineer',
       emailVerified: true,
       premiumUser: true,
@@ -157,18 +160,20 @@ List<User> users = [
       bio:
           'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed.',
       hobbies: ['Dancing'],
-      preferences: {
-        "id": 1,
-        "gender": "All",
-        "ageRange": "18 - 100",
-        "kidsNumber": "0",
-        "petsAllowed": ['Cats', 'Dog'],
-        "idealLocation": "Arlington, Tx",
-        "lease": '4 months',
-        "housingType": ["Apartment", "House", "Townhouse", "Condo"],
-        "smoking": "Outside only",
-        "privprivateSpace": ["Bathroom", "Bedroom"],
-      },
+      preferences: [
+        {'title': 'Gender', 'resp': "All"},
+        {"title": "Age Range", "resp": "18 - 100"},
+        {"title": "Number of Kids", "resp": "0"},
+        {"title": "Pets Allowed", "resp": "Yes"},
+        {"title": "Ideal Location", "resp": "Arlington, Tx"},
+        {"title": "Lease", "resp": "4 months"},
+        {"title": "Smoking?", "resp": "Outside only"},
+        {'title': "Appartment", "resp": "Yes"},
+        {"title": "House", "resp": "Yes"},
+        {"title": "Condo", "resp": "Yes"},
+        {"title": "Private Bathroom", "resp": "Yes"},
+        {"title": "Private Bedroom", "resp": "Yes"}
+      ],
       jobTitle: 'Artist',
       emailVerified: true,
       premiumUser: true,
@@ -184,18 +189,20 @@ List<User> users = [
       bio:
           'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed.',
       hobbies: ['Dancing'],
-      preferences: {
-        "id": 5,
-        "gender": "All",
-        "ageRange": "18 - 100",
-        "kidsNumber": "0",
-        "petsAllowed": ['Cats', 'Dog'],
-        "idealLocation": "Arlington, Tx",
-        "lease": '4 months',
-        "housingType": ["Apartment", "House", "Townhouse", "Condo"],
-        "smoking": "Outside only",
-        "privprivateSpace": ["Bathroom", "Bedroom"],
-      },
+      preferences: [
+        {'title': 'Gender', 'resp': "All"},
+        {"title": "Age Range", "resp": "18 - 100"},
+        {"title": "Number of Kids", "resp": "0"},
+        {"title": "Pets Allowed", "resp": "Yes"},
+        {"title": "Ideal Location", "resp": "Arlington, Tx"},
+        {"title": "Lease", "resp": "4 months"},
+        {"title": "Smoking?", "resp": "Outside only"},
+        {'title': "Appartment", "resp": "Yes"},
+        {"title": "House", "resp": "Yes"},
+        {"title": "Condo", "resp": "Yes"},
+        {"title": "Private Bathroom", "resp": "Yes"},
+        {"title": "Private Bedroom", "resp": "Yes"}
+      ],
       jobTitle: 'Actor',
       emailVerified: true,
       premiumUser: true,
@@ -211,18 +218,20 @@ List<User> users = [
       bio:
           'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed.',
       hobbies: ['Dancing'],
-      preferences: {
-        "id": 6,
-        "gender": "All",
-        "ageRange": "18 - 100",
-        "kidsNumber": "0",
-        "petsAllowed": ['Cats', 'Dog'],
-        "idealLocation": "Arlington, Tx",
-        "lease": '4 months',
-        "housingType": ["Apartment", "House", "Townhouse", "Condo"],
-        "smoking": "Outside only",
-        "privprivateSpace": ["Bathroom", "Bedroom"],
-      },
+      preferences: [
+        {'title': 'Gender', 'resp': "All"},
+        {"title": "Age Range", "resp": "18 - 100"},
+        {"title": "Number of Kids", "resp": "0"},
+        {"title": "Pets Allowed", "resp": "Yes"},
+        {"title": "Ideal Location", "resp": "Arlington, Tx"},
+        {"title": "Lease", "resp": "4 months"},
+        {"title": "Smoking?", "resp": "Outside only"},
+        {'title': "Appartment", "resp": "Yes"},
+        {"title": "House", "resp": "Yes"},
+        {"title": "Condo", "resp": "Yes"},
+        {"title": "Private Bathroom", "resp": "Yes"},
+        {"title": "Private Bedroom", "resp": "Yes"}
+      ],
       jobTitle: 'Chef',
       emailVerified: true,
       premiumUser: true,
@@ -238,18 +247,20 @@ List<User> users = [
       bio:
           'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed.',
       hobbies: ['Dancing'],
-      preferences: {
-        "id": 7,
-        "gender": "All",
-        "ageRange": "18 - 100",
-        "kidsNumber": "0",
-        "petsAllowed": ['Cats', 'Dog'],
-        "idealLocation": "Arlington, Tx",
-        "lease": '4 months',
-        "housingType": ["Apartment", "House", "Townhouse", "Condo"],
-        "smoking": "Outside only",
-        "privprivateSpace": ["Bathroom", "Bedroom"],
-      },
+      preferences: [
+        {'title': 'Gender', 'resp': "All"},
+        {"title": "Age Range", "resp": "18 - 100"},
+        {"title": "Number of Kids", "resp": "0"},
+        {"title": "Pets Allowed", "resp": "Yes"},
+        {"title": "Ideal Location", "resp": "Arlington, Tx"},
+        {"title": "Lease", "resp": "4 months"},
+        {"title": "Smoking?", "resp": "Outside only"},
+        {'title': "Appartment", "resp": "Yes"},
+        {"title": "House", "resp": "Yes"},
+        {"title": "Condo", "resp": "Yes"},
+        {"title": "Private Bathroom", "resp": "Yes"},
+        {"title": "Private Bedroom", "resp": "Yes"}
+      ],
       jobTitle: 'Engineer',
       emailVerified: true,
       premiumUser: true,
@@ -264,18 +275,20 @@ List<User> users = [
       bio:
           'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed.',
       hobbies: ['Dancing'],
-      preferences: {
-        "id": 8,
-        "gender": "All",
-        "ageRange": "18 - 100",
-        "kidsNumber": "0",
-        "petsAllowed": ['Cats', 'Dog'],
-        "idealLocation": "Arlington, Tx",
-        "lease": '4 months',
-        "housingType": ["Apartment", "House", "Townhouse", "Condo"],
-        "smoking": "Outside only",
-        "privprivateSpace": ["Bathroom", "Bedroom"],
-      },
+      preferences: [
+        {'title': 'Gender', 'resp': "All"},
+        {"title": "Age Range", "resp": "18 - 100"},
+        {"title": "Number of Kids", "resp": "0"},
+        {"title": "Pets Allowed", "resp": "Yes"},
+        {"title": "Ideal Location", "resp": "Arlington, Tx"},
+        {"title": "Lease", "resp": "4 months"},
+        {"title": "Smoking?", "resp": "Outside only"},
+        {'title': "Appartment", "resp": "Yes"},
+        {"title": "House", "resp": "Yes"},
+        {"title": "Condo", "resp": "Yes"},
+        {"title": "Private Bathroom", "resp": "Yes"},
+        {"title": "Private Bedroom", "resp": "Yes"}
+      ],
       jobTitle: 'Student',
       emailVerified: true,
       premiumUser: true,
@@ -291,18 +304,20 @@ List<User> users = [
       bio:
           'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed.',
       hobbies: ['Dancing'],
-      preferences: {
-        "id": 9,
-        "gender": "All",
-        "ageRange": "18 - 100",
-        "kidsNumber": "0",
-        "petsAllowed": ['Cats', 'Dog'],
-        "idealLocation": "Arlington, Tx",
-        "lease": '4 months',
-        "housingType": ["Apartment", "House", "Townhouse", "Condo"],
-        "smoking": "Outside only",
-        "privprivateSpace": ["Bathroom", "Bedroom"],
-      },
+      preferences: [
+        {'title': 'Gender', 'resp': "All"},
+        {"title": "Age Range", "resp": "18 - 100"},
+        {"title": "Number of Kids", "resp": "0"},
+        {"title": "Pets Allowed", "resp": "Yes"},
+        {"title": "Ideal Location", "resp": "Arlington, Tx"},
+        {"title": "Lease", "resp": "4 months"},
+        {"title": "Smoking?", "resp": "Outside only"},
+        {'title': "Appartment", "resp": "Yes"},
+        {"title": "House", "resp": "Yes"},
+        {"title": "Condo", "resp": "Yes"},
+        {"title": "Private Bathroom", "resp": "Yes"},
+        {"title": "Private Bedroom", "resp": "Yes"}
+      ],
       jobTitle: 'Business Owner',
       emailVerified: true,
       premiumUser: true,
@@ -318,18 +333,20 @@ List<User> users = [
       bio:
           'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed.',
       hobbies: ['Dancing'],
-      preferences: {
-        "id": 10,
-        "gender": "All",
-        "ageRange": "18 - 100",
-        "kidsNumber": "0",
-        "petsAllowed": ['Cats', 'Dog'],
-        "idealLocation": "Arlington, Tx",
-        "lease": '4 months',
-        "housingType": ["Apartment", "House", "Townhouse", "Condo"],
-        "smoking": "Outside only",
-        "privprivateSpace": ["Bathroom", "Bedroom"],
-      },
+      preferences: [
+        {'title': 'Gender', 'resp': "All"},
+        {"title": "Age Range", "resp": "18 - 100"},
+        {"title": "Number of Kids", "resp": "0"},
+        {"title": "Pets Allowed", "resp": "Yes"},
+        {"title": "Ideal Location", "resp": "Arlington, Tx"},
+        {"title": "Lease", "resp": "4 months"},
+        {"title": "Smoking?", "resp": "Outside only"},
+        {'title': "Appartment", "resp": "Yes"},
+        {"title": "House", "resp": "Yes"},
+        {"title": "Condo", "resp": "Yes"},
+        {"title": "Private Bathroom", "resp": "Yes"},
+        {"title": "Private Bedroom", "resp": "Yes"}
+      ],
       jobTitle: 'Student',
       emailVerified: true,
       premiumUser: true,
@@ -349,7 +366,37 @@ class _RoommateState extends State<Roommate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Matches')),
+      appBar: AppBar(
+        centerTitle: true,
+        titleSpacing: 20,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            CircleAvatar(
+              backgroundColor: Colors.green,
+              child: const Text('AH'),
+            ),
+            Text(
+              'Roomies',
+              style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                  color: Colors.black),
+            ),
+            IconButton(
+              icon: const Icon(
+                Icons.message_outlined,
+                color: Colors.black,
+              ),
+              tooltip: 'Open shopping cart',
+              onPressed: () {
+                // handle the press
+              },
+            ),
+          ],
+        ),
+        backgroundColor: Colors.white,
+      ),
       body: Stack(
         children: [
           SingleChildScrollView(
@@ -369,7 +416,11 @@ class _RoommateState extends State<Roommate> {
                   ),
                   Container(
                     padding: const EdgeInsets.symmetric(
-                        vertical: 8.0, horizontal: 20),
+                        vertical: 8.0, horizontal: 10),
+                    width: MediaQuery.of(context).size.width,
+                    constraints: BoxConstraints(
+                      maxHeight: double.infinity,
+                    ),
                     child: Column(children: [
                       Text(
                         'About Me',
@@ -390,7 +441,11 @@ class _RoommateState extends State<Roommate> {
                   ),
                   Container(
                     padding: const EdgeInsets.symmetric(
-                        vertical: 8.0, horizontal: 20),
+                        vertical: 8.0, horizontal: 10),
+                    constraints: BoxConstraints(
+                      maxHeight: double.infinity,
+                    ),
+                    width: MediaQuery.of(context).size.width,
                     child: Column(children: [
                       Text(
                         'My Preferences',
@@ -399,108 +454,27 @@ class _RoommateState extends State<Roommate> {
                           fontSize: 16,
                         ),
                       ),
-                      Row(
-                        children: [
-                          Text(
-                            '- Gender: ',
-                            style: const TextStyle(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 16,
+                      Wrap(
+                        spacing: 8.0, // gap between adjacent chips
+                        runSpacing: 4.0, // gap between lines
+                        children: currentMatch.preferences.map((e) {
+                          return Chip(
+                            label: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(
+                                  "${e['title']}:",
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                Text(e['resp'])
+                              ],
                             ),
-                          ),
-                          Text(
-                            currentMatch.preferences['gender'],
-                            style: const TextStyle(
-                              fontSize: 16,
-                            ),
-                          )
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Text(
-                            '- Age Range: ',
-                            style: const TextStyle(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 16,
-                            ),
-                          ),
-                          Text(
-                            currentMatch.preferences['ageRange'],
-                            style: const TextStyle(
-                              fontSize: 16,
-                            ),
-                          )
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Text(
-                            '- Number of Kids: ',
-                            style: const TextStyle(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 16,
-                            ),
-                          ),
-                          Text(
-                            currentMatch.preferences['kidsNumber'],
-                            style: const TextStyle(
-                              fontSize: 16,
-                            ),
-                          )
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Text(
-                            '- Ideal Location: ',
-                            style: const TextStyle(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 16,
-                            ),
-                          ),
-                          Text(
-                            currentMatch.preferences['idealLocation'],
-                            style: const TextStyle(
-                              fontSize: 16,
-                            ),
-                          )
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Text(
-                            '- Lease: ',
-                            style: const TextStyle(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 16,
-                            ),
-                          ),
-                          Text(
-                            currentMatch.preferences['lease'],
-                            style: const TextStyle(
-                              fontSize: 16,
-                            ),
-                          )
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Text(
-                            '- Smoking: ',
-                            style: const TextStyle(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 16,
-                            ),
-                          ),
-                          Text(
-                            currentMatch.preferences['smoking'],
-                            style: const TextStyle(
-                              fontSize: 16,
-                            ),
-                          )
-                        ],
-                      ),
+                          );
+                        }).toList(),
+                      )
                     ]),
                     decoration:
                         BoxDecoration(border: Border.all(color: Colors.grey)),
