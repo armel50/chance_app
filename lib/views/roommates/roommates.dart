@@ -440,26 +440,19 @@ class _RoommateState extends State<Roommate> {
               jobTitle: currentMatch.jobTitle,
               profileImg: currentMatch.profileImg),
         ),
-        // onDraggableCanceled: (Velocity velocity, Offset offset) {
-        //   setState(() {
-        //     if (stateChanged == true) {
-        //       stateChanged = false;
-        //       currentIndex -= 1;
-        //     }
-        //     print(stateChanged);
-        //   });
-        // },
+    
         childWhenDragging: matchProfile(
             updateUser: updateUser,
             currentMatch: currentIndex + 1 < users.length - 1
                 ? users[currentIndex + 1]
                 : users[0]),
         onDragEnd: (drag) {
-          if (drag.velocity.pixelsPerSecond.dx < 0) {
+          // print(drag.velocity.pixelsPerSecond.dx);
+          if (drag.velocity.pixelsPerSecond.dx < -300) { // 300 will is the sweet spot that shows the actual intent of swiping
             // Swipe left
             print('swipe left');
             updateUser();
-          } else {
+          } else if (drag.velocity.pixelsPerSecond.dx > 300) {
             // Swipe right
             print('swipe right');
             updateUser();
