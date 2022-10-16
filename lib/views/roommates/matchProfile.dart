@@ -34,11 +34,14 @@ class matchProfile extends StatelessWidget {
                     maxHeight: double.infinity,
                   ),
                   child: Column(children: [
-                    Text(
-                      'About Me',
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'About Me',
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
                       ),
                     ),
                     Text(
@@ -59,11 +62,14 @@ class matchProfile extends StatelessWidget {
                   ),
                   width: MediaQuery.of(context).size.width,
                   child: Column(children: [
-                    Text(
-                      'My Preferences',
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        'My Preferences',
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
                       ),
                     ),
                     Wrap(
@@ -108,6 +114,7 @@ class matchProfile extends StatelessWidget {
                 Align(
                   alignment: Alignment.bottomLeft,
                   child: FloatingActionButton(
+                    heroTag: "swipeLeft",
                     onPressed: () {
                       print('swipe left');
                       updateUser();
@@ -123,6 +130,7 @@ class matchProfile extends StatelessWidget {
                 Align(
                   alignment: Alignment.bottomCenter,
                   child: FloatingActionButton(
+                    heroTag: "superLike",
                     onPressed: () {
                       print('Super like');
                       updateUser();
@@ -138,6 +146,7 @@ class matchProfile extends StatelessWidget {
                 Align(
                   alignment: Alignment.bottomRight,
                   child: FloatingActionButton(
+                    heroTag: "swipeRight",
                     onPressed: () {
                       print('swipe right');
                       updateUser();

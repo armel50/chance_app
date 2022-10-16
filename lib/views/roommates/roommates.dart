@@ -1,4 +1,6 @@
+import 'package:chance_app/views/messages/messages.dart';
 import 'package:chance_app/views/roommates/matchProfile.dart';
+import 'package:chance_app/views/user/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:chance_app/views/roommates/userCard.dart';
 
@@ -40,6 +42,7 @@ class User {
   String bio;
   List<String> hobbies;
   List<dynamic> preferences;
+
   String jobTitle;
   bool emailVerified;
   bool premiumUser;
@@ -384,9 +387,19 @@ class _RoommateState extends State<Roommate> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            CircleAvatar(
-              backgroundColor: Colors.green,
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                shape: const CircleBorder(),
+                padding: const EdgeInsets.all(15),
+                backgroundColor: Colors.green,
+              ),
               child: const Text('AH'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Profile()),
+                );
+              },
             ),
             Text(
               'Roomies',
@@ -403,6 +416,10 @@ class _RoommateState extends State<Roommate> {
               tooltip: 'Open shopping cart',
               onPressed: () {
                 // handle the press
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Message()),
+                );
               },
             ),
           ],
