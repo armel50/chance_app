@@ -1,3 +1,4 @@
+import 'package:chance_app/views/messages/components/messageBody.dart';
 import 'package:chance_app/views/user/profile.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
@@ -23,10 +24,10 @@ class _ActiveMessageState extends State<ActiveMessage> {
             Navigator.pop(context);
           },
           child: Icon(
-            Icons.arrow_back,
+            Icons.arrow_back_ios_rounded,
           ),
         ),
-        title: Column(
+        title: Row(
           children: [
             GestureDetector(
                 child: Container(
@@ -41,19 +42,38 @@ class _ActiveMessageState extends State<ActiveMessage> {
                 onTap: () {
                   print("you clicked me");
                 }),
-            Text(
-              widget.name,
-              style: const TextStyle(
-                fontSize: 16,
-              ),
-            )
+                SizedBox(width: 10,)
+           , Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  widget.name,
+                  style: const TextStyle(
+                    fontSize: 16,
+                  ),
+                ),
+                Text(
+                  'Active 3m ago',
+                  style: const TextStyle(
+                    fontSize: 12,
+                  ),
+                )
+              ],
+            ),
           ],
         ),
         actions: <Widget>[
           IconButton(
             icon: Icon(
-              Icons.video_call_outlined,
-              size: 40,
+              Icons.local_phone,
+            ),
+            onPressed: () {
+              // do something
+            },
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.videocam,
             ),
             onPressed: () {
               // do something
@@ -61,31 +81,7 @@ class _ActiveMessageState extends State<ActiveMessage> {
           )
         ],
       ),
-      body: Column(
-        children: [
-          SingleChildScrollView(
-              child: Container(
-            height: MediaQuery.of(context).size.height - 200,
-            margin: const EdgeInsets.only(bottom: 20.0),
-            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 10),
-            width: MediaQuery.of(context).size.width,
-            child: Text('message'),
-          )),
-          Container(
-            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 10),
-            width: MediaQuery.of(context).size.width,
-            child: Text(
-              'sdlkfj',
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-                decoration: TextDecoration.none,
-                fontSize: 30,
-              ),
-            ),
-          ),
-        ],
-      ),
+      body: MessageBody()
     );
   }
 }

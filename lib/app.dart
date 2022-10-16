@@ -1,3 +1,4 @@
+import 'package:chance_app/constants.dart';
 import 'package:flutter/material.dart';
 
 
@@ -30,7 +31,7 @@ class _AppState extends State<App> {
       body: _views[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
-        selectedItemColor: Color.fromARGB(255, 82, 127, 163),
+        selectedItemColor: primaryColor,
         unselectedItemColor: Colors.black,
         selectedLabelStyle:
             TextStyle(fontWeight: FontWeight.bold, fontSize: 14.0),

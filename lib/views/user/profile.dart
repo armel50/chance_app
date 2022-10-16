@@ -23,7 +23,7 @@ class _ProfileState extends State<Profile> {
             Navigator.pop(context);
           },
           child: Icon(
-            Icons.arrow_back,
+            Icons.arrow_back_ios_rounded,
            
           ),
         ),

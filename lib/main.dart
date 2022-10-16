@@ -1,3 +1,4 @@
+import 'package:chance_app/constants.dart';
 import 'package:flutter/material.dart';
 import './app.dart';
 
@@ -13,16 +14,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        primaryColor: Color(0x1f68a3),
-        appBarTheme: AppBarTheme(
-        backgroundColor: Color.fromARGB(255, 82, 127, 163),
-          foregroundColor:  Colors.white
-         
-        )
-        
-      ),
-
+          primarySwatch: Colors.blue,
+          primaryColor: Color(0x1f68a3),
+          appBarTheme: AppBarTheme(
+            backgroundColor: primaryColor,
+            foregroundColor: AppBarTextColor,
+          )),
       home: App(),
     );
   }
