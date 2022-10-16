@@ -16,16 +16,14 @@ class _ActiveMessageState extends State<ActiveMessage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-         centerTitle: true,
+        centerTitle: true,
         titleSpacing: 20,
-        backgroundColor: Colors.white,
-         leading: GestureDetector(
+        leading: GestureDetector(
           onTap: () {
             Navigator.pop(context);
           },
           child: Icon(
             Icons.arrow_back,
-            color: Colors.black,
           ),
         ),
         title: Column(
@@ -36,7 +34,6 @@ class _ActiveMessageState extends State<ActiveMessage> {
                     height: 40,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      color: Colors.black,
                       image: DecorationImage(
                           image: NetworkImage(widget.profileImg),
                           fit: BoxFit.cover),
@@ -46,22 +43,23 @@ class _ActiveMessageState extends State<ActiveMessage> {
                 }),
             Text(
               widget.name,
-              style: const TextStyle(fontSize: 16, color: Colors.black),
+              style: const TextStyle(
+                fontSize: 16,
+              ),
             )
           ],
         ),
-         actions: <Widget>[
-    IconButton(
-      icon: Icon(
-        Icons.video_call_outlined,
-        color: Colors.black,
-        size: 40,
-      ),
-      onPressed: () {
-        // do something
-      },
-    )
-  ],
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.video_call_outlined,
+              size: 40,
+            ),
+            onPressed: () {
+              // do something
+            },
+          )
+        ],
       ),
       body: Column(
         children: [
@@ -74,8 +72,7 @@ class _ActiveMessageState extends State<ActiveMessage> {
             child: Text('message'),
           )),
           Container(
-            padding:
-                const EdgeInsets.symmetric(vertical: 8.0, horizontal: 10),
+            padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 10),
             width: MediaQuery.of(context).size.width,
             child: Text(
               'sdlkfj',

@@ -12,11 +12,11 @@ class _ProfileState extends State<Profile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+      
         title: Text(
           'Profile',
           style: TextStyle(
-              color: Colors.black, fontWeight: FontWeight.bold, fontSize: 17),
+             fontWeight: FontWeight.bold, fontSize: 17),
         ),
         leading: GestureDetector(
           onTap: () {
@@ -24,7 +24,7 @@ class _ProfileState extends State<Profile> {
           },
           child: Icon(
             Icons.arrow_back,
-            color: Colors.black,
+           
           ),
         ),
       ),

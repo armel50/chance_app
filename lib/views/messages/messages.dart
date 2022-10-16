@@ -64,19 +64,19 @@ class _MessageState extends State<Message> {
       'lastMessage':
           'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
       'initials': 'FD',
-      'profileImg':           'https://images.unsplash.com/photo-1595956553066-fe24a8c33395?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDl8fGZhY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
-
+      'profileImg':
+          'https://images.unsplash.com/photo-1595956553066-fe24a8c33395?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDl8fGZhY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
     },
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+       
         title: Text(
           'Messages',
           style: TextStyle(
-              color: Colors.black, fontWeight: FontWeight.bold, fontSize: 17),
+               fontWeight: FontWeight.bold, fontSize: 17),
         ),
         leading: GestureDetector(
           onTap: () {
@@ -84,18 +84,24 @@ class _MessageState extends State<Message> {
           },
           child: Icon(
             Icons.arrow_back,
-            color: Colors.black,
+            
           ),
         ),
+        actions: [
+          IconButton(
+              onPressed: () {
+                print('pressed');
+              },
+              icon: Icon(Icons.search, ))
+        ],
       ),
       body: SingleChildScrollView(
           child: Container(
         margin: const EdgeInsets.only(bottom: 20.0),
         child: Column(
             children: messages.map((e) {
-          var profileImg = e['profileImg'] ??
-              '';
-              
+          var profileImg = e['profileImg'] ?? '';
+
           return Material(
             child: ListTile(
               leading: CircleAvatar(
@@ -106,24 +112,32 @@ class _MessageState extends State<Message> {
                 backgroundImage: NetworkImage(profileImg),
               ),
               title: Column(
-
                 children: [
                   Align(
                     alignment: Alignment.centerLeft,
-                    child: Text(e['name'] ?? '',
-                    style: TextStyle(
-                                color: Colors.black, fontWeight: FontWeight.bold, fontSize: 17),
+                    child: Text(
+                      e['name'] ?? '',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17),
                     ),
                   ),
-                  Text(e['lastMessage'] ?? "", overflow: TextOverflow.ellipsis,),
+                  Text(
+                    e['lastMessage'] ?? "",
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ],
               ),
               trailing: Icon(Icons.arrow_forward_ios_rounded),
-
-              onTap: (){
-                 Navigator.push(
+              onTap: () {
+                Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => ActiveMessage(profileImg: profileImg, name: e['name'] ?? '',)),
+                  MaterialPageRoute(
+                      builder: (context) => ActiveMessage(
+                            profileImg: profileImg,
+                            name: e['name'] ?? '',
+                          )),
                 );
               },
             ),

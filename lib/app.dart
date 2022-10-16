@@ -30,7 +30,7 @@ class _AppState extends State<App> {
       body: _views[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
-        selectedItemColor: Colors.green,
+        selectedItemColor: Color.fromARGB(255, 82, 127, 163),
         unselectedItemColor: Colors.black,
         selectedLabelStyle:
             TextStyle(fontWeight: FontWeight.bold, fontSize: 14.0),

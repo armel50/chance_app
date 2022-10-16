@@ -43,7 +43,7 @@ class userCard extends StatelessWidget {
               '$name, $age',
               style: const TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Colors.white70,
+                color: Color.fromARGB(255, 82, 127, 163),
                 decoration: TextDecoration.none,
                 fontSize: 30,
               ),
@@ -56,13 +56,13 @@ class userCard extends StatelessWidget {
           child: Container(
             child: Row(
               children: [
-                Icon(Icons.cases_outlined, color: Colors.white70,),
+                Icon(Icons.cases_outlined, color: Color.fromARGB(255, 82, 127, 163),),
                 Text(
                   ' $jobTitle',
                   style: const TextStyle(
                     fontSize: 16,
                     decoration: TextDecoration.none,
-                    color: Colors.white70
+                    color:Color.fromARGB(255, 82, 127, 163),
                   ),
                 )
               ],

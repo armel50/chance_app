@@ -13,7 +13,7 @@ class matchProfile extends StatelessWidget {
       children: [
         SingleChildScrollView(
           child: Container(
-            margin: const EdgeInsets.only(bottom: 150.0),
+            margin: const EdgeInsets.only(bottom: 100.0),
             child: Column(
               children: [
                 Container(
@@ -33,26 +33,25 @@ class matchProfile extends StatelessWidget {
                   constraints: BoxConstraints(
                     maxHeight: double.infinity,
                   ),
-                  child: Column(children: [
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        'About Me',
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+
+                      children: [
+                        Text(
+                          'About Me',
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
                         ),
-                      ),
-                    ),
-                    Text(
-                      currentMatch.bio,
-                      style: const TextStyle(
-                        fontSize: 16,
-                      ),
-                    )
-                  ]),
-                  decoration:
-                      BoxDecoration(border: Border.all(color: Colors.grey)),
+                        Text(
+                          currentMatch.bio,
+                          style: const TextStyle(
+                            fontSize: 16,
+                          ),
+                        )
+                      ]),
+                 
                 ),
                 Container(
                   padding:
@@ -61,43 +60,42 @@ class matchProfile extends StatelessWidget {
                     maxHeight: double.infinity,
                   ),
                   width: MediaQuery.of(context).size.width,
-                  child: Column(children: [
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        'My Preferences',
-                        style: const TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ),
-                    Wrap(
-                      spacing: 8.0, // gap between adjacent chips
-                      runSpacing: 4.0, // gap between lines
-                      children: currentMatch.preferences.map((e) {
-                        return Material(
-                          child: Chip(
-                            label: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Text(
-                                  "${e['title']}:",
-                                  style: const TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 16,
-                                  ),
-                                ),
-                                Text(e['resp'])
-                              ],
-                            ),
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'My Preferences',
+                          style: const TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
                           ),
-                        );
-                      }).toList(),
-                    )
-                  ]),
+                        ),
+                        Wrap(
+                          spacing: 8.0, // gap between adjacent chips
+                          runSpacing: 4.0, // gap between lines
+                          children: currentMatch.preferences.map((e) {
+                            return Material(
+                              child: Chip(
+                                label: Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Text(
+                                      "${e['title']}:",
+                                      style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16,
+                                      ),
+                                    ),
+                                    Text(e['resp'])
+                                  ],
+                                ),
+                              ),
+                            );
+                          }).toList(),
+                        )
+                      ]),
                   decoration:
-                      BoxDecoration(border: Border.all(color: Colors.grey)),
+                      BoxDecoration(border: Border.all (color: Color.fromARGB(255, 199, 199, 199), width: 0.3)),
                 ),
               ],
             ),

@@ -406,12 +406,12 @@ class _RoommateState extends State<Roommate> {
               style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
-                  color: Colors.black),
+                 ),
             ),
             IconButton(
               icon: const Icon(
                 Icons.message_outlined,
-                color: Colors.black,
+              
               ),
               tooltip: 'Open shopping cart',
               onPressed: () {
@@ -424,7 +424,7 @@ class _RoommateState extends State<Roommate> {
             ),
           ],
         ),
-        backgroundColor: Colors.white,
+        
       ),
       body: Draggable(
         child: matchProfile(
