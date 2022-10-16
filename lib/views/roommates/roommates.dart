@@ -80,7 +80,7 @@ List<User> users = [
       preferences: [
         {'title': 'Gender', 'resp': "All"},
         {"title": "Age Range", "resp": "18 - 100"},
-        {"title": "Number of Kids", "resp": "0"},
+        {"title": "Kids", "resp": "0"},
         {"title": "Pets Allowed", "resp": "Yes"},
         {"title": "Ideal Location", "resp": "Arlington, Tx"},
         {"title": "Lease", "resp": "4 months"},
@@ -109,7 +109,7 @@ List<User> users = [
       preferences: [
         {'title': 'Gender', 'resp': "All"},
         {"title": "Age Range", "resp": "18 - 100"},
-        {"title": "Number of Kids", "resp": "0"},
+        {"title": "Kids", "resp": "0"},
         {"title": "Pets Allowed", "resp": "Yes"},
         {"title": "Ideal Location", "resp": "Arlington, Tx"},
         {"title": "Lease", "resp": "4 months"},
@@ -138,7 +138,7 @@ List<User> users = [
       preferences: [
         {'title': 'Gender', 'resp': "All"},
         {"title": "Age Range", "resp": "18 - 100"},
-        {"title": "Number of Kids", "resp": "0"},
+        {"title": "Kids", "resp": "0"},
         {"title": "Pets Allowed", "resp": "Yes"},
         {"title": "Ideal Location", "resp": "Arlington, Tx"},
         {"title": "Lease", "resp": "4 months"},
@@ -167,7 +167,7 @@ List<User> users = [
       preferences: [
         {'title': 'Gender', 'resp': "All"},
         {"title": "Age Range", "resp": "18 - 100"},
-        {"title": "Number of Kids", "resp": "0"},
+        {"title": "Kids", "resp": "0"},
         {"title": "Pets Allowed", "resp": "Yes"},
         {"title": "Ideal Location", "resp": "Arlington, Tx"},
         {"title": "Lease", "resp": "4 months"},
@@ -196,7 +196,7 @@ List<User> users = [
       preferences: [
         {'title': 'Gender', 'resp': "All"},
         {"title": "Age Range", "resp": "18 - 100"},
-        {"title": "Number of Kids", "resp": "0"},
+        {"title": "Kids", "resp": "0"},
         {"title": "Pets Allowed", "resp": "Yes"},
         {"title": "Ideal Location", "resp": "Arlington, Tx"},
         {"title": "Lease", "resp": "4 months"},
@@ -225,7 +225,7 @@ List<User> users = [
       preferences: [
         {'title': 'Gender', 'resp': "All"},
         {"title": "Age Range", "resp": "18 - 100"},
-        {"title": "Number of Kids", "resp": "0"},
+        {"title": "Kids", "resp": "0"},
         {"title": "Pets Allowed", "resp": "Yes"},
         {"title": "Ideal Location", "resp": "Arlington, Tx"},
         {"title": "Lease", "resp": "4 months"},
@@ -254,7 +254,7 @@ List<User> users = [
       preferences: [
         {'title': 'Gender', 'resp': "All"},
         {"title": "Age Range", "resp": "18 - 100"},
-        {"title": "Number of Kids", "resp": "0"},
+        {"title": "Kids", "resp": "0"},
         {"title": "Pets Allowed", "resp": "Yes"},
         {"title": "Ideal Location", "resp": "Arlington, Tx"},
         {"title": "Lease", "resp": "4 months"},
@@ -283,7 +283,7 @@ List<User> users = [
       preferences: [
         {'title': 'Gender', 'resp': "All"},
         {"title": "Age Range", "resp": "18 - 100"},
-        {"title": "Number of Kids", "resp": "0"},
+        {"title": "Kids", "resp": "0"},
         {"title": "Pets Allowed", "resp": "Yes"},
         {"title": "Ideal Location", "resp": "Arlington, Tx"},
         {"title": "Lease", "resp": "4 months"},
@@ -312,7 +312,7 @@ List<User> users = [
       preferences: [
         {'title': 'Gender', 'resp': "All"},
         {"title": "Age Range", "resp": "18 - 100"},
-        {"title": "Number of Kids", "resp": "0"},
+        {"title": "Kids", "resp": "0"},
         {"title": "Pets Allowed", "resp": "Yes"},
         {"title": "Ideal Location", "resp": "Arlington, Tx"},
         {"title": "Lease", "resp": "4 months"},
@@ -341,7 +341,7 @@ List<User> users = [
       preferences: [
         {'title': 'Gender', 'resp': "All"},
         {"title": "Age Range", "resp": "18 - 100"},
-        {"title": "Number of Kids", "resp": "0"},
+        {"title": "Kids", "resp": "0"},
         {"title": "Pets Allowed", "resp": "Yes"},
         {"title": "Ideal Location", "resp": "Arlington, Tx"},
         {"title": "Lease", "resp": "4 months"},

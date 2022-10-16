@@ -12,10 +12,10 @@ class MessageInput extends StatelessWidget {
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            offset: Offset(0, 4),
-            blurRadius: 32,
-            color: Color(0xFF087949).withOpacity(0.08),
-          ),
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 10,
+                    blurRadius: 32,
+                    offset: Offset(3, 3),)
         ],
       ),
       child: SafeArea(
