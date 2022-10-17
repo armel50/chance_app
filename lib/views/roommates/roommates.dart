@@ -4,33 +4,6 @@ import 'package:chance_app/views/user/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:chance_app/views/roommates/userCard.dart';
 
-class Preference {
-  int id;
-  String gender;
-  String ageRange;
-  String kidsNumber;
-  bool petsAllowed;
-  String idealLocation;
-  String lease;
-  List<String> housingType;
-  String smoking;
-  bool privateBedroom;
-  bool privateBathroom;
-
-  Preference({
-    required this.id,
-    required this.gender,
-    required this.ageRange,
-    required this.kidsNumber,
-    required this.petsAllowed,
-    required this.idealLocation,
-    required this.lease,
-    required this.housingType,
-    required this.smoking,
-    required this.privateBedroom,
-    required this.privateBathroom,
-  });
-}
 
 class User {
   int id;
@@ -78,13 +51,13 @@ List<User> users = [
           'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed.It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed.It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed.',
       hobbies: ['Dancing', 'Gym', 'Drawing'],
       preferences: [
-        {'title': 'Gender', 'resp': "All"},
-        {"title": "Age Range", "resp": "18 - 100"},
-        {"title": "Kids", "resp": "0"},
-        {"title": "Pets Allowed", "resp": "Yes"},
+        {'title': 'Gender', 'resp': "Male"},
+        {"title": "Age", "resp": "21 - 100"},
+        {"title": "Kids", "resp": "No kids"},
+        {"title": "Pets", "resp": "Dog"},
         {"title": "Ideal Location", "resp": "Arlington, Tx"},
         {"title": "Lease", "resp": "4 months"},
-        {"title": "Smoking?", "resp": "Outside only"},
+        {"title": "Smoking", "resp": "Outside only"},
         {'title': "Appartment", "resp": "Yes"},
         {"title": "House", "resp": "Yes"},
         {"title": "Condo", "resp": "Yes"},
@@ -107,13 +80,13 @@ List<User> users = [
           'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed.',
       hobbies: ['Dancing'],
       preferences: [
-        {'title': 'Gender', 'resp': "All"},
-        {"title": "Age Range", "resp": "18 - 100"},
-        {"title": "Kids", "resp": "0"},
-        {"title": "Pets Allowed", "resp": "Yes"},
+        {'title': 'Gender', 'resp': "Female"},
+        {"title": "Age", "resp": "18 - 35"},
+        {"title": "Kids", "resp": "Up to 2"},
+        {"title": "Pets", "resp": "Yes"},
         {"title": "Ideal Location", "resp": "Arlington, Tx"},
-        {"title": "Lease", "resp": "4 months"},
-        {"title": "Smoking?", "resp": "Outside only"},
+        {"title": "Lease", "resp": "1 year"},
+        {"title": "Smoking", "resp": "Outside only"},
         {'title': "Appartment", "resp": "Yes"},
         {"title": "House", "resp": "Yes"},
         {"title": "Condo", "resp": "Yes"},
@@ -137,12 +110,12 @@ List<User> users = [
       hobbies: ['Dancing'],
       preferences: [
         {'title': 'Gender', 'resp': "All"},
-        {"title": "Age Range", "resp": "18 - 100"},
-        {"title": "Kids", "resp": "0"},
-        {"title": "Pets Allowed", "resp": "Yes"},
+        {"title": "Age", "resp": "22 - 50"},
+        {"title": "Kids", "resp": "No kids"},
+        {"title": "Pets", "resp": "No pets"},
         {"title": "Ideal Location", "resp": "Arlington, Tx"},
-        {"title": "Lease", "resp": "4 months"},
-        {"title": "Smoking?", "resp": "Outside only"},
+        {"title": "Lease", "resp": "6 months"},
+        {"title": "Smoking", "resp": "No"},
         {'title': "Appartment", "resp": "Yes"},
         {"title": "House", "resp": "Yes"},
         {"title": "Condo", "resp": "Yes"},
@@ -165,13 +138,13 @@ List<User> users = [
           'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed.',
       hobbies: ['Dancing'],
       preferences: [
-        {'title': 'Gender', 'resp': "All"},
-        {"title": "Age Range", "resp": "18 - 100"},
-        {"title": "Kids", "resp": "0"},
-        {"title": "Pets Allowed", "resp": "Yes"},
+        {'title': 'Gender', 'resp': "Male"},
+        {"title": "Age", "resp": "21 - 45"},
+        {"title": "Kids", "resp": "Up to 1"},
+        {"title": "Pets", "resp": "All"},
         {"title": "Ideal Location", "resp": "Arlington, Tx"},
         {"title": "Lease", "resp": "4 months"},
-        {"title": "Smoking?", "resp": "Outside only"},
+        {"title": "Smoking", "resp": "Outside only"},
         {'title': "Appartment", "resp": "Yes"},
         {"title": "House", "resp": "Yes"},
         {"title": "Condo", "resp": "Yes"},
@@ -194,13 +167,13 @@ List<User> users = [
           'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed.',
       hobbies: ['Dancing'],
       preferences: [
-        {'title': 'Gender', 'resp': "All"},
-        {"title": "Age Range", "resp": "18 - 100"},
-        {"title": "Kids", "resp": "0"},
-        {"title": "Pets Allowed", "resp": "Yes"},
+        {'title': 'Gender', 'resp': "Female"},
+        {"title": "Age", "resp": "18 - 100"},
+        {"title": "Kids", "resp": "No kids"},
+        {"title": "Pets", "resp": "Bird"},
         {"title": "Ideal Location", "resp": "Arlington, Tx"},
         {"title": "Lease", "resp": "4 months"},
-        {"title": "Smoking?", "resp": "Outside only"},
+        {"title": "Smoking", "resp": "Outside only"},
         {'title': "Appartment", "resp": "Yes"},
         {"title": "House", "resp": "Yes"},
         {"title": "Condo", "resp": "Yes"},
@@ -224,12 +197,12 @@ List<User> users = [
       hobbies: ['Dancing'],
       preferences: [
         {'title': 'Gender', 'resp': "All"},
-        {"title": "Age Range", "resp": "18 - 100"},
+        {"title": "Age", "resp": "18 - 100"},
         {"title": "Kids", "resp": "0"},
-        {"title": "Pets Allowed", "resp": "Yes"},
+        {"title": "Pets", "resp": "Fish"},
         {"title": "Ideal Location", "resp": "Arlington, Tx"},
         {"title": "Lease", "resp": "4 months"},
-        {"title": "Smoking?", "resp": "Outside only"},
+        {"title": "Smoking", "resp": "Outside only"},
         {'title': "Appartment", "resp": "Yes"},
         {"title": "House", "resp": "Yes"},
         {"title": "Condo", "resp": "Yes"},
@@ -253,12 +226,12 @@ List<User> users = [
       hobbies: ['Dancing'],
       preferences: [
         {'title': 'Gender', 'resp': "All"},
-        {"title": "Age Range", "resp": "18 - 100"},
+        {"title": "Age", "resp": "18 - 100"},
         {"title": "Kids", "resp": "0"},
-        {"title": "Pets Allowed", "resp": "Yes"},
+        {"title": "Pets", "resp": "Cat"},
         {"title": "Ideal Location", "resp": "Arlington, Tx"},
         {"title": "Lease", "resp": "4 months"},
-        {"title": "Smoking?", "resp": "Outside only"},
+        {"title": "Smoking", "resp": "Outside only"},
         {'title': "Appartment", "resp": "Yes"},
         {"title": "House", "resp": "Yes"},
         {"title": "Condo", "resp": "Yes"},
@@ -282,12 +255,12 @@ List<User> users = [
       hobbies: ['Dancing'],
       preferences: [
         {'title': 'Gender', 'resp': "All"},
-        {"title": "Age Range", "resp": "18 - 100"},
-        {"title": "Kids", "resp": "0"},
-        {"title": "Pets Allowed", "resp": "Yes"},
+        {"title": "Age", "resp": "18 - 100"},
+        {"title": "Kids", "resp": "No kids"},
+        {"title": "Pets", "resp": "Yes"},
         {"title": "Ideal Location", "resp": "Arlington, Tx"},
         {"title": "Lease", "resp": "4 months"},
-        {"title": "Smoking?", "resp": "Outside only"},
+        {"title": "Smoking", "resp": "No"},
         {'title': "Appartment", "resp": "Yes"},
         {"title": "House", "resp": "Yes"},
         {"title": "Condo", "resp": "Yes"},
@@ -311,12 +284,12 @@ List<User> users = [
       hobbies: ['Dancing'],
       preferences: [
         {'title': 'Gender', 'resp': "All"},
-        {"title": "Age Range", "resp": "18 - 100"},
-        {"title": "Kids", "resp": "0"},
-        {"title": "Pets Allowed", "resp": "Yes"},
+        {"title": "Age", "resp": "18 - 100"},
+        {"title": "Kids", "resp": "Up to 6"},
+        {"title": "Pets", "resp": "No pets"},
         {"title": "Ideal Location", "resp": "Arlington, Tx"},
         {"title": "Lease", "resp": "4 months"},
-        {"title": "Smoking?", "resp": "Outside only"},
+        {"title": "Smoking", "resp": "No"},
         {'title': "Appartment", "resp": "Yes"},
         {"title": "House", "resp": "Yes"},
         {"title": "Condo", "resp": "Yes"},
@@ -340,12 +313,12 @@ List<User> users = [
       hobbies: ['Dancing'],
       preferences: [
         {'title': 'Gender', 'resp': "All"},
-        {"title": "Age Range", "resp": "18 - 100"},
-        {"title": "Kids", "resp": "0"},
-        {"title": "Pets Allowed", "resp": "Yes"},
+        {"title": "Age", "resp": "18 - 100"},
+        {"title": "Kids", "resp": "No kids"},
+        {"title": "Pets", "resp": "No pets"},
         {"title": "Ideal Location", "resp": "Arlington, Tx"},
-        {"title": "Lease", "resp": "4 months"},
-        {"title": "Smoking?", "resp": "Outside only"},
+        {"title": "Lease", "resp": "7 months"},
+        {"title": "Smoking", "resp": "Yes"},
         {'title': "Appartment", "resp": "Yes"},
         {"title": "House", "resp": "Yes"},
         {"title": "Condo", "resp": "Yes"},
@@ -404,14 +377,13 @@ class _RoommateState extends State<Roommate> {
             Text(
               'Roomies',
               style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                 ),
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+              ),
             ),
             IconButton(
               icon: const Icon(
                 Icons.message_outlined,
-              
               ),
               tooltip: 'Open shopping cart',
               onPressed: () {
@@ -424,7 +396,6 @@ class _RoommateState extends State<Roommate> {
             ),
           ],
         ),
-        
       ),
       body: Draggable(
         child: matchProfile(
@@ -440,7 +411,6 @@ class _RoommateState extends State<Roommate> {
               jobTitle: currentMatch.jobTitle,
               profileImg: currentMatch.profileImg),
         ),
-    
         childWhenDragging: matchProfile(
             updateUser: updateUser,
             currentMatch: currentIndex + 1 < users.length - 1
@@ -448,7 +418,8 @@ class _RoommateState extends State<Roommate> {
                 : users[0]),
         onDragEnd: (drag) {
           print(drag.velocity.pixelsPerSecond.dx);
-          if (drag.velocity.pixelsPerSecond.dx < -10000) { // 300 will is the sweet spot that shows the actual intent of swiping
+          if (drag.velocity.pixelsPerSecond.dx < -10000) {
+            // 300 will is the sweet spot that shows the actual intent of swiping
             // Swipe left
             print('swipe left');
             updateUser();

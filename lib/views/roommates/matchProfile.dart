@@ -1,3 +1,4 @@
+import 'package:chance_app/constants.dart';
 import 'package:chance_app/views/roommates/roommates.dart';
 import 'package:flutter/material.dart';
 import 'package:chance_app/views/roommates/userCard.dart';
@@ -35,7 +36,6 @@ class matchProfile extends StatelessWidget {
                   ),
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-
                       children: [
                         Text(
                           'About Me',
@@ -51,7 +51,6 @@ class matchProfile extends StatelessWidget {
                           ),
                         )
                       ]),
-                 
                 ),
                 Container(
                   padding:
@@ -74,11 +73,39 @@ class matchProfile extends StatelessWidget {
                           spacing: 8.0, // gap between adjacent chips
                           runSpacing: 4.0, // gap between lines
                           children: currentMatch.preferences.map((e) {
+                            var _icon;
+                            switch (e['title']) {
+                              case 'Gender':
+                                _icon = Icons.transgender_rounded;
+                                break;
+                              case 'Age':
+                                _icon = Icons.date_range_outlined;
+                                break;
+                                  case 'Kids':
+                                _icon = Icons.child_friendly_outlined;
+                                break;
+                                  case 'Pets':
+                                _icon = Icons.pets_outlined;
+                                break;
+                                  case 'Ideal Location':
+                                _icon = Icons.near_me_outlined;
+                                break;
+                                  case 'Lease':
+                                _icon = Icons.document_scanner_outlined;
+                                break;
+                                  case 'Smoking':
+                                _icon = Icons.smoking_rooms_outlined;
+                                break;
+                                
+                              default:
+                            }
                             return Material(
                               child: Chip(
                                 label: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
+                                    if(_icon != null)
+                                    Icon(_icon, color: primaryColor,),
                                     Text(
                                       "${e['title']}:",
                                       style: const TextStyle(
@@ -94,8 +121,10 @@ class matchProfile extends StatelessWidget {
                           }).toList(),
                         )
                       ]),
-                  decoration:
-                      BoxDecoration(border: Border.all (color: Color.fromARGB(255, 199, 199, 199), width: 0.3)),
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                          color: Color.fromARGB(255, 199, 199, 199),
+                          width: 0.3)),
                 ),
               ],
             ),
