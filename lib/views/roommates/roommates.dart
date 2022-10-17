@@ -447,12 +447,12 @@ class _RoommateState extends State<Roommate> {
                 ? users[currentIndex + 1]
                 : users[0]),
         onDragEnd: (drag) {
-          // print(drag.velocity.pixelsPerSecond.dx);
-          if (drag.velocity.pixelsPerSecond.dx < -300) { // 300 will is the sweet spot that shows the actual intent of swiping
+          print(drag.velocity.pixelsPerSecond.dx);
+          if (drag.velocity.pixelsPerSecond.dx < -10000) { // 300 will is the sweet spot that shows the actual intent of swiping
             // Swipe left
             print('swipe left');
             updateUser();
-          } else if (drag.velocity.pixelsPerSecond.dx > 300) {
+          } else if (drag.velocity.pixelsPerSecond.dx > 10000) {
             // Swipe right
             print('swipe right');
             updateUser();

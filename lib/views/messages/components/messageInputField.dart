@@ -34,7 +34,7 @@ class MessageInput extends StatelessWidget {
                 ),
                 decoration: BoxDecoration(
                   color: primaryColor,
-                  borderRadius: BorderRadius.circular(50),
+                  borderRadius: BorderRadius.circular(5),
                 ),
                 child: Row(
                   children: [
@@ -45,6 +45,7 @@ class MessageInput extends StatelessWidget {
                         
                         // maxLines: 4,
                         decoration: InputDecoration(
+                          hintStyle: TextStyle(color: AppBarTextColor),
                           hintText: "Type message",
                           border: InputBorder.none,
                         ),
