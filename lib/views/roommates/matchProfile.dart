@@ -37,12 +37,18 @@ class matchProfile extends StatelessWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                          SizedBox(
+                          height: defaultMargin*2,
+                        ),
                         Text(
                           'About Me',
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
                           ),
+                        ),
+                        SizedBox(
+                          height: defaultMargin,
                         ),
                         Text(
                           currentMatch.bio,
@@ -62,12 +68,18 @@ class matchProfile extends StatelessWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                           SizedBox(
+                          height: defaultMargin*2,
+                        ),
                         Text(
                           'My Preferences',
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
                           ),
+                        ),
+                           SizedBox(
+                          height: defaultMargin,
                         ),
                         Wrap(
                           spacing: 8.0, // gap between adjacent chips
@@ -81,22 +93,22 @@ class matchProfile extends StatelessWidget {
                               case 'Age':
                                 _icon = Icons.date_range_outlined;
                                 break;
-                                  case 'Kids':
+                              case 'Kids':
                                 _icon = Icons.child_friendly_outlined;
                                 break;
-                                  case 'Pets':
+                              case 'Pets':
                                 _icon = Icons.pets_outlined;
                                 break;
-                                  case 'Ideal Location':
-                                _icon = Icons.near_me_outlined;
+                              case 'Location':
+                                _icon = Icons.location_on_outlined;
                                 break;
-                                  case 'Lease':
+                              case 'Lease':
                                 _icon = Icons.document_scanner_outlined;
                                 break;
-                                  case 'Smoking':
+                              case 'Smoking':
                                 _icon = Icons.smoking_rooms_outlined;
                                 break;
-                                
+
                               default:
                             }
                             return Material(
@@ -104,10 +116,13 @@ class matchProfile extends StatelessWidget {
                                 label: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    if(_icon != null)
-                                    Icon(_icon, color: primaryColor,),
+                                    if (_icon != null)
+                                      Icon(
+                                        _icon,
+                                        color: primaryColor,
+                                      ),
                                     Text(
-                                      "${e['title']}:",
+                                      "${e['title']}: ",
                                       style: const TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 16,

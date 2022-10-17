@@ -1,3 +1,4 @@
+import 'package:chance_app/constants.dart';
 import 'package:chance_app/views/messages/components/messageBody.dart';
 import 'package:chance_app/views/user/profile.dart';
 import 'package:flutter/material.dart';
@@ -101,7 +102,7 @@ class _ActiveMessageState extends State<ActiveMessage> {
                     print("you clicked me");
                   }),
               SizedBox(
-                width: 10,
+                width: defaultMargin,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
