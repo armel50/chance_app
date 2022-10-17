@@ -138,7 +138,7 @@ class matchProfile extends StatelessWidget {
                       ]),
                   decoration: BoxDecoration(
                       border: Border.all(
-                          color: Color.fromARGB(255, 199, 199, 199),
+                          color:Color.fromARGB(255, 158, 168, 176),
                           width: 0.3)),
                 ),
               ],
