@@ -1,4 +1,5 @@
 import 'package:chance_app/constants.dart';
+import 'package:chance_app/views/rooms/filterViewScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -10,6 +11,7 @@ class Room extends StatefulWidget {
 }
 
 class _RoomState extends State<Room> {
+  var isMapOn = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,10 +22,15 @@ class _RoomState extends State<Room> {
           style: ElevatedButton.styleFrom(
               padding: const EdgeInsets.all(defaultPadding),
               foregroundColor: AppBarTextColor),
-          child: const Text('List'),
-          onPressed: () {},
+          child: isMapOn ? Text('List') : Text('Map'),
+          onPressed: () {
+            setState(() {
+              // Toggle map view
+              isMapOn = !isMapOn;
+            });
+          },
         ),
-        title:  Container(
+        title: Container(
           padding: EdgeInsets.symmetric(
             horizontal: defaultPadding,
           ),
@@ -33,13 +40,14 @@ class _RoomState extends State<Room> {
           ),
           child: Row(
             children: [
-              Icon(Icons.search, 
-              color: primaryColor,),
+              Icon(
+                Icons.search,
+                color: primaryColor,
+              ),
               Expanded(
-                
                 child: TextField(
                   cursorColor: Colors.black,
-                  
+
                   // maxLines: 4,
                   decoration: InputDecoration(
                     hintText: "Type message",
@@ -48,8 +56,10 @@ class _RoomState extends State<Room> {
                   style: TextStyle(color: Colors.black),
                 ),
               ),
-                 Icon(Icons.near_me_outlined, // display the listing near the user
-              color: primaryColor,),
+              Icon(
+                Icons.near_me_outlined, // display the listing near the user
+                color: primaryColor,
+              ),
             ],
           ),
         ),
@@ -59,18 +69,25 @@ class _RoomState extends State<Room> {
                 padding: const EdgeInsets.all(defaultPadding),
                 foregroundColor: AppBarTextColor),
             child: const Text('Filter'),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => FilterViewScreen()),
+              );
+            },
           ),
         ],
       ),
-      body: GoogleMap(
+      body: isMapOn ? 
+      GoogleMap(
         myLocationButtonEnabled: false,
         zoomControlsEnabled: false,
         initialCameraPosition: CameraPosition(
           target: LatLng(37.773972, -122.431297),
           zoom: 12,
         ),
-      ),
+      ): 
+      Text('List'),
     );
   }
 }
