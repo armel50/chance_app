@@ -5,7 +5,8 @@ import 'package:chance_app/constants.dart';
 
 class RoomCard extends StatelessWidget {
   Place place;
-  RoomCard({required this.place});
+  bool setWidth;
+  RoomCard({required this.place, required this.setWidth});
 
   @override
   Widget build(BuildContext context) {
@@ -21,8 +22,19 @@ class RoomCard extends StatelessWidget {
         child: Column(
           children: [
             Stack(children: [
+              if(!this.setWidth )
               Container(
                 height: 200.0,
+                
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      fit: BoxFit.cover, image: NetworkImage(place.image)),
+                ),
+              ),
+              if(this.setWidth )
+              Container(
+                height: 200.0,
+                width: 330,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.cover, image: NetworkImage(place.image)),
@@ -58,7 +70,7 @@ class RoomCard extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        Text('/month')
+                        Text(' / month')
                       ],
                     ),
                     SizedBox(
