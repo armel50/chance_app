@@ -2,6 +2,7 @@ import 'package:chance_app/constants.dart';
 import 'package:chance_app/views/rooms/components/roomCard.dart';
 import 'package:chance_app/views/rooms/filterViewScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class Place {
@@ -32,6 +33,15 @@ class Room extends StatefulWidget {
 }
 
 class _RoomState extends State<Room> {
+  String _mapStyle = '';
+  initState() {
+    super.initState();
+
+    rootBundle.loadString('assets/googleMapStyles/mapLowDetails.txt').then((string) {
+      _mapStyle = string;
+    });
+  }
+
   var places = [
     Place(
         address: '3708 Waycross Ct, Arlington, TX 76016',
@@ -89,6 +99,7 @@ class _RoomState extends State<Room> {
         type: 'House'),
   ];
   var isMapOn = true;
+  var mapController;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -159,10 +170,20 @@ class _RoomState extends State<Room> {
           ? GoogleMap(
               myLocationButtonEnabled: false,
               zoomControlsEnabled: false,
+              mapType: MapType.hybrid,
               initialCameraPosition: CameraPosition(
-                target: LatLng(37.773972, -122.431297),
+                target: LatLng(32.7292, -97.1150),
                 zoom: 12,
               ),
+              onMapCreated: (GoogleMapController controller) {
+                if (mounted) {
+                  setState(() {
+                    // print(_mapStyle);
+                    mapController = controller;
+                    controller.setMapStyle(_mapStyle);
+                  });
+                }
+              },
             )
           : SingleChildScrollView(
               child: Column(
