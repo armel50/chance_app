@@ -107,7 +107,6 @@ class _RoomState extends State<Room> {
   var currentPlaceIndex;
   final ScrollController _scrollController = ScrollController();
   void _animateToIndex(int index) {
-    
     _scrollController.animateTo(
       index * 380,
       duration: Duration(seconds: 1),
@@ -128,7 +127,7 @@ class _RoomState extends State<Room> {
       //add start location marker
       markerId: MarkerId(LatLng(32.7292, -97.1150).toString()),
       position: LatLng(32.7292, -97.1150), //position of marker
-      onTap:  () {
+      onTap: () {
         setState(() {
           showRow = true;
           _animateToIndex(0);
