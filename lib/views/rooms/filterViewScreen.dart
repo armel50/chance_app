@@ -1,7 +1,6 @@
 import 'package:chance_app/constants.dart';
 import 'package:flutter/material.dart';
-
-
+import 'package:flutter/services.dart';
 
 class FilterViewScreen extends StatefulWidget {
   const FilterViewScreen({Key? key}) : super(key: key);
@@ -11,6 +10,14 @@ class FilterViewScreen extends StatefulWidget {
 }
 
 class _FilterViewScreenState extends State<FilterViewScreen> {
+  var viewMore = false;
+  var monthlyRent = RangeValues(500, 1500);
+  var monthlyRentLeftText = new TextEditingController();
+  var monthlyRentRightText = new TextEditingController();
+  var squareFoot = RangeValues(700, 2000);
+  var squareFootLeftText = new TextEditingController();
+  var squareFootRightText = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,41 +55,77 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Price'),
-              Text('Monthly Rent'),
+              SizedBox(
+                height: defaultMargin,
+              ),
+              Text(
+                'Price',
+                style: TextStyle(fontSize: defaultTitleFontSize),
+              ),
+              SizedBox(
+                height: defaultMargin,
+              ),
+              Text(
+                'Monthly Rent',
+                style: TextStyle(fontSize: defaultSubtitleFontSize),
+              ),
+              SizedBox(
+                height: defaultMargin,
+              ),
               Row(
                 children: [
                   Expanded(
                     child: TextField(
-                      obscureText: true,
+                      controller: monthlyRentLeftText,
+                      keyboardType: TextInputType.number,
+                      inputFormatters: [
+                        FilteringTextInputFormatter.digitsOnly
+                      ], // Only numbers can be entered
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
-                        labelText: 'Password',
                       ),
                     ),
+                  ),
+                  SizedBox(
+                    width: defaultMargin,
                   ),
                   Container(
                     child: Text('to'),
                   ),
+                  SizedBox(
+                    width: defaultMargin,
+                  ),
                   Expanded(
                     child: TextField(
-                      obscureText: true,
+                      controller: monthlyRentRightText,
+                      keyboardType: TextInputType.number,
+                      inputFormatters: [
+                        FilteringTextInputFormatter.digitsOnly
+                      ], //
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
-                        labelText: 'Password',
                       ),
                     ),
                   )
                 ],
               ),
+              SizedBox(
+                height: defaultMargin,
+              ),
               RangeSlider(
-                values: RangeValues(40, 80),
+                values: monthlyRent,
+                min: 200,
+                max: 10000,
                 activeColor: primaryColor,
                 inactiveColor: Colors.grey,
-                max: 100,
                 onChanged: (RangeValues values) {
-                  print('changed');
+                  setState(() {
+                    monthlyRent = values;
+                  });
                 },
+              ),
+              SizedBox(
+                height: defaultMargin * 1.5,
               ),
               Row(
                 // Divider
@@ -96,8 +139,23 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                   ),
                 ],
               ),
-              Text('Beds and Baths'),
-              Text('Bedrooms'),
+              SizedBox(
+                height: defaultMargin * 1.5,
+              ),
+              Text(
+                'Beds and Baths',
+                style: TextStyle(fontSize: defaultTitleFontSize),
+              ),
+              SizedBox(
+                height: defaultMargin,
+              ),
+              Text(
+                'Bedrooms',
+                style: TextStyle(fontSize: defaultSubtitleFontSize),
+              ),
+              SizedBox(
+                height: defaultMargin,
+              ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -115,7 +173,13 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                   ),
                 ],
               ),
-              Text('Bathrooms'),
+              Text(
+                'Bathrooms',
+                style: TextStyle(fontSize: defaultSubtitleFontSize),
+              ),
+              SizedBox(
+                height: defaultMargin,
+              ),
               Row(
                 children: [
                   Chip(
@@ -129,6 +193,9 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                   ),
                 ],
               ),
+              SizedBox(
+                height: defaultMargin * 1.5,
+              ),
               Row(
                 // Divider
                 children: [
@@ -141,8 +208,23 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                   ),
                 ],
               ),
-              Text('Housing'),
-              Text('Home Type'),
+              SizedBox(
+                height: defaultMargin * 1.5,
+              ),
+              Text(
+                'Housing',
+                style: TextStyle(fontSize: defaultTitleFontSize),
+              ),
+              SizedBox(
+                height: defaultMargin,
+              ),
+              Text(
+                'Home Type',
+                style: TextStyle(fontSize: defaultSubtitleFontSize),
+              ),
+              SizedBox(
+                height: defaultMargin,
+              ),
               Row(
                 children: [
                   Text('Apartments (52)'),
@@ -198,6 +280,9 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                   )
                 ],
               ),
+              SizedBox(
+                height: defaultMargin * 1.5,
+              ),
               Row(
                 // Divider
                 children: [
@@ -210,7 +295,16 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                   ),
                 ],
               ),
-              Text('Pet Policy'),
+              SizedBox(
+                height: defaultMargin * 1.5,
+              ),
+              Text(
+                'Pet Policy',
+                style: TextStyle(fontSize: defaultTitleFontSize),
+              ),
+              SizedBox(
+                height: defaultMargin,
+              ),
               Row(
                 children: [
                   Text('Dog Friendly (20)'),
@@ -233,6 +327,9 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                   )
                 ],
               ),
+              SizedBox(
+                height: defaultMargin * 1.5,
+              ),
               Row(
                 // Divider
                 children: [
@@ -245,7 +342,16 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                   ),
                 ],
               ),
-              Text('Amenities'),
+              SizedBox(
+                height: defaultMargin * 1.5,
+              ),
+              Text(
+                'Amenities',
+                style: TextStyle(fontSize: defaultTitleFontSize),
+              ),
+              SizedBox(
+                height: defaultMargin,
+              ),
               Row(
                 children: [
                   Text('In Unit Washer & Dryer (10)'),
@@ -356,6 +462,9 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                   )
                 ],
               ),
+              SizedBox(
+                height: defaultMargin * 1.5,
+              ),
               Row(
                 // Divider
                 children: [
@@ -368,40 +477,70 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                   ),
                 ],
               ),
-              Text('Squre Footage Range'),
+              SizedBox(
+                height: defaultMargin * 1.5,
+              ),
+              Text(
+                'Squre Footage Range',
+                style: TextStyle(fontSize: defaultTitleFontSize),
+              ),
+              SizedBox(
+                height: defaultMargin,
+              ),
               Row(
                 children: [
                   Expanded(
                     child: TextField(
-                      obscureText: true,
+                      controller: squareFootLeftText,
+                      keyboardType: TextInputType.number,
+                      inputFormatters: [
+                        FilteringTextInputFormatter.digitsOnly
+                      ], //
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
-                        labelText: 'Password',
                       ),
                     ),
+                  ),
+                  SizedBox(
+                    width: defaultMargin,
                   ),
                   Container(
                     child: Text('to'),
                   ),
+                  SizedBox(
+                    width: defaultMargin,
+                  ),
                   Expanded(
                     child: TextField(
-                      obscureText: true,
+                      controller: squareFootRightText,
+                      keyboardType: TextInputType.number,
+                      inputFormatters: [
+                        FilteringTextInputFormatter.digitsOnly
+                      ], //
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
-                        labelText: 'Password',
                       ),
                     ),
                   )
                 ],
               ),
+              SizedBox(
+                height: defaultMargin,
+              ),
               RangeSlider(
-                values: RangeValues(40, 80),
+                values: squareFoot,
+                min: 400,
+                max: 5000,
                 activeColor: primaryColor,
                 inactiveColor: Colors.grey,
-                max: 100,
                 onChanged: (RangeValues values) {
-                  print('changed');
+                  setState(() {
+                    squareFoot = values;
+                  });
                 },
+              ),
+              SizedBox(
+                height: defaultMargin,
               ),
             ],
           ),
@@ -409,10 +548,13 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
       )),
       bottomNavigationBar: Container(
         height: 100,
-        padding: EdgeInsets.only(left:defaultPadding * 4, right: defaultPadding * 4, bottom: defaultPadding * 3, top: defaultPadding),
+        padding: EdgeInsets.only(
+            left: defaultPadding * 4,
+            right: defaultPadding * 4,
+            bottom: defaultPadding * 3,
+            top: defaultPadding),
         width: 10,
         child: TextButton(
-          
           style: TextButton.styleFrom(
             foregroundColor: Colors.white,
             backgroundColor: primaryColor,

@@ -4,6 +4,8 @@ const primaryColor = Color.fromARGB(255, 82, 127, 163);
 const AppBarTextColor = Colors.white;
 const defaultPadding = 10.0;
 const defaultMargin = 10.0;
+const defaultTitleFontSize = 25.0;
+const defaultSubtitleFontSize = 17.0;
 const mapStyle = [
   {
     "featureType": "administrative.land_parcel",
@@ -66,4 +68,3 @@ const mapStyle = [
     ]
   }
 ];
-
