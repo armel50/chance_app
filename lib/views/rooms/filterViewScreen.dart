@@ -1,4 +1,7 @@
 import 'package:chance_app/constants.dart';
+import 'package:flat_icons_flutter/flat_icons_flutter.dart';
+import 'package:flat_icons_flutter/icon_data.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -17,6 +20,22 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
   var squareFoot = RangeValues(700, 2000);
   var squareFootLeftText = new TextEditingController();
   var squareFootRightText = new TextEditingController();
+  var checkedApartment = false;
+  var checkedHouse = false;
+  var checkedCondo = false;
+  var checkedTownhome = false;
+  var checkedDog = false;
+  var checkedCat = false;
+  var checkedInUnitWasherDryer = false;
+  var checkedAC = false;
+  var checkedParking = false;
+  var checkedDishwasher = false;
+  var checkedUtilities = false;
+  var checkedWasherDryerHookups = false;
+  var checkedPool = false;
+  var checkedFitnessCenter = false;
+  var checkedLaundry = false;
+  var checkedWheelchair = false;
 
   @override
   Widget build(BuildContext context) {
@@ -226,57 +245,143 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                 height: defaultMargin,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Apartments (52)'),
-                  Checkbox(
-                    value: true,
-                    onChanged: ((value) {
-                      print('changed');
-                    }),
+                  Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: defaultMargin * 0.5),
+                        child: Icon(Icons.apartment_outlined),
+                      ),
+                      Text('Apartments (52)'),
+                    ],
+                  ),
+                  Container(
+                    height: 20,
+                    width: 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      border: Border.all(color: Colors.black, width: 0.5),
+                    ),
+                    child: Checkbox(
+                      checkColor: primaryColor,
+                      activeColor: Colors.white,
+                      side: BorderSide.none,
+                      value: checkedApartment,
+                      onChanged: ((value) {
+                        setState(() {
+                          checkedApartment = !checkedApartment;
+                        });
+                      }),
+                    ),
                   )
                 ],
               ),
+              SizedBox(
+                height: defaultMargin * 1.3,
+              ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Apartments (52)'),
-                  Checkbox(
-                    value: true,
-                    onChanged: ((value) {
-                      print('changed');
-                    }),
+                  Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: defaultMargin * 0.5),
+                        child: Icon(Icons.apartment_outlined),
+                      ),
+                      Text('Houses (2)'),
+                    ],
+                  ),
+                  Container(
+                    height: 20,
+                    width: 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      border: Border.all(color: Colors.black, width: 0.5),
+                    ),
+                    child: Checkbox(
+                      checkColor: primaryColor,
+                      activeColor: Colors.white,
+                      side: BorderSide.none,
+                      value: checkedHouse,
+                      onChanged: ((value) {
+                        setState(() {
+                          checkedHouse = !checkedHouse;
+                        });
+                      }),
+                    ),
                   )
                 ],
               ),
+              SizedBox(
+                height: defaultMargin * 1.3,
+              ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Houses (2)'),
-                  Checkbox(
-                    value: true,
-                    onChanged: ((value) {
-                      print('changed');
-                    }),
+                  Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: defaultMargin * 0.5),
+                        child: Icon(Icons.apartment_outlined),
+                      ),
+                      Text('Condos (0)'),
+                    ],
+                  ),
+                  Container(
+                    height: 20,
+                    width: 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      border: Border.all(color: Colors.black, width: 0.5),
+                    ),
+                    child: Checkbox(
+                      checkColor: primaryColor,
+                      activeColor: Colors.white,
+                      side: BorderSide.none,
+                      value: checkedCondo,
+                      onChanged: ((value) {
+                        setState(() {
+                          checkedCondo = !checkedCondo;
+                        });
+                      }),
+                    ),
                   )
                 ],
               ),
-              Row(
-                children: [
-                  Text('Condos (0)'),
-                  Checkbox(
-                    value: false,
-                    onChanged: ((value) {
-                      print('changed');
-                    }),
-                  )
-                ],
+              SizedBox(
+                height: defaultMargin * 1.3,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('townhomes (20)'),
-                  Checkbox(
-                    value: false,
-                    onChanged: ((value) {
-                      print('changed');
-                    }),
+                  Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: defaultMargin * 0.5),
+                        child: Icon(Icons.apartment_outlined),
+                      ),
+                      Text('Townhomes (20)'),
+                    ],
+                  ),
+                  Container(
+                    height: 20,
+                    width: 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      border: Border.all(color: Colors.black, width: 0.5),
+                    ),
+                    child: Checkbox(
+                      checkColor: primaryColor,
+                      activeColor: Colors.white,
+                      side: BorderSide.none,
+                      value: checkedTownhome,
+                      onChanged: ((value) {
+                        setState(() {
+                          checkedTownhome = !checkedTownhome;
+                        });
+                      }),
+                    ),
                   )
                 ],
               ),
@@ -306,24 +411,71 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                 height: defaultMargin,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Dog Friendly (20)'),
-                  Checkbox(
-                    value: false,
-                    onChanged: ((value) {
-                      print('changed');
-                    }),
+                  Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: defaultMargin * 0.5),
+                        child: Icon(Icons.apartment_outlined),
+                      ),
+                      Text('Dog Friendly (20)'),
+                    ],
+                  ),
+                  Container(
+                    height: 20,
+                    width: 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      border: Border.all(color: Colors.black, width: 0.5),
+                    ),
+                    child: Checkbox(
+                      checkColor: primaryColor,
+                      activeColor: Colors.white,
+                      side: BorderSide.none,
+                      value: checkedDog,
+                      onChanged: ((value) {
+                        setState(() {
+                          checkedDog = !checkedDog;
+                        });
+                      }),
+                    ),
                   )
                 ],
               ),
+              SizedBox(
+                height: defaultMargin * 1.3,
+              ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Cat Friendly (10)'),
-                  Checkbox(
-                    value: false,
-                    onChanged: ((value) {
-                      print('changed');
-                    }),
+                  Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: defaultMargin * 0.5),
+                        child: Icon(Icons.apartment_outlined),
+                      ),
+                      Text('Cat Friendly (10)'),
+                    ],
+                  ),
+                  Container(
+                    height: 20,
+                    width: 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      border: Border.all(color: Colors.black, width: 0.5),
+                    ),
+                    child: Checkbox(
+                      checkColor: primaryColor,
+                      activeColor: Colors.white,
+                      side: BorderSide.none,
+                      value: checkedCat,
+                      onChanged: ((value) {
+                        setState(() {
+                          checkedCat = !checkedCat;
+                        });
+                      }),
+                    ),
                   )
                 ],
               ),
@@ -353,112 +505,360 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                 height: defaultMargin,
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('In Unit Washer & Dryer (10)'),
-                  Checkbox(
-                    value: false,
-                    onChanged: ((value) {
-                      print('changed');
-                    }),
+                  Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: defaultMargin * 0.5),
+                        child: Icon(Icons.apartment_outlined),
+                      ),
+                      Text('In Unit Washer & Dryer (10)'),
+                    ],
+                  ),
+                  Container(
+                    height: 20,
+                    width: 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      border: Border.all(color: Colors.black, width: 0.5),
+                    ),
+                    child: Checkbox(
+                      checkColor: primaryColor,
+                      activeColor: Colors.white,
+                      side: BorderSide.none,
+                      value: checkedInUnitWasherDryer,
+                      onChanged: ((value) {
+                        setState(() {
+                          checkedInUnitWasherDryer = !checkedInUnitWasherDryer;
+                        });
+                      }),
+                    ),
                   )
                 ],
               ),
+              SizedBox(
+                height: defaultMargin * 1.3,
+              ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Air Conditioning (10)'),
-                  Checkbox(
-                    value: false,
-                    onChanged: ((value) {
-                      print('changed');
-                    }),
+                  Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: defaultMargin * 0.5),
+                        child: Icon(Icons.apartment_outlined),
+                      ),
+                      Text('Air Conditioning (10)'),
+                    ],
+                  ),
+                  Container(
+                    height: 20,
+                    width: 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      border: Border.all(color: Colors.black, width: 0.5),
+                    ),
+                    child: Checkbox(
+                      checkColor: primaryColor,
+                      activeColor: Colors.white,
+                      side: BorderSide.none,
+                      value: checkedAC,
+                      onChanged: ((value) {
+                        setState(() {
+                          checkedAC = !checkedAC;
+                        });
+                      }),
+                    ),
                   )
                 ],
               ),
+              SizedBox(
+                height: defaultMargin * 1.3,
+              ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Parking (10)'),
-                  Checkbox(
-                    value: false,
-                    onChanged: ((value) {
-                      print('changed');
-                    }),
+                  Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: defaultMargin * 0.5),
+                        child: Icon(Icons.apartment_outlined),
+                      ),
+                      Text('Parking (10)'),
+                    ],
+                  ),
+                  Container(
+                    height: 20,
+                    width: 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      border: Border.all(color: Colors.black, width: 0.5),
+                    ),
+                    child: Checkbox(
+                      checkColor: primaryColor,
+                      activeColor: Colors.white,
+                      side: BorderSide.none,
+                      value: checkedParking,
+                      onChanged: ((value) {
+                        setState(() {
+                          checkedParking = !checkedParking;
+                        });
+                      }),
+                    ),
                   )
                 ],
               ),
+              SizedBox(
+                height: defaultMargin * 1.3,
+              ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Dishwasher (10)'),
-                  Checkbox(
-                    value: false,
-                    onChanged: ((value) {
-                      print('changed');
-                    }),
+                  Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: defaultMargin * 0.5),
+                        child: Icon(Icons.apartment_outlined),
+                      ),
+                      Text('Dishwasher (10)'),
+                    ],
+                  ),
+                  Container(
+                    height: 20,
+                    width: 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      border: Border.all(color: Colors.black, width: 0.5),
+                    ),
+                    child: Checkbox(
+                      checkColor: primaryColor,
+                      activeColor: Colors.white,
+                      side: BorderSide.none,
+                      value: checkedDishwasher,
+                      onChanged: ((value) {
+                        setState(() {
+                          checkedDishwasher = !checkedDishwasher;
+                        });
+                      }),
+                    ),
                   )
                 ],
               ),
+              SizedBox(
+                height: defaultMargin * 1.3,
+              ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Utilities included (12)'),
-                  Checkbox(
-                    value: false,
-                    onChanged: ((value) {
-                      print('changed');
-                    }),
+                  Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: defaultMargin * 0.5),
+                        child: Icon(Icons.apartment_outlined),
+                      ),
+                      Text('Utilities included (12)'),
+                    ],
+                  ),
+                  Container(
+                    height: 20,
+                    width: 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      border: Border.all(color: Colors.black, width: 0.5),
+                    ),
+                    child: Checkbox(
+                      checkColor: primaryColor,
+                      activeColor: Colors.white,
+                      side: BorderSide.none,
+                      value: checkedUtilities,
+                      onChanged: ((value) {
+                        setState(() {
+                          checkedUtilities = !checkedUtilities;
+                        });
+                      }),
+                    ),
                   )
                 ],
               ),
+              SizedBox(
+                height: defaultMargin * 1.3,
+              ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Washer & Dryer Hookups (12)'),
-                  Checkbox(
-                    value: false,
-                    onChanged: ((value) {
-                      print('changed');
-                    }),
+                  Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: defaultMargin * 0.5),
+                        child: Icon(Icons.apartment_outlined),
+                      ),
+                      Text('Washer & Dryer Hookups (12)'),
+                    ],
+                  ),
+                  Container(
+                    height: 20,
+                    width: 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      border: Border.all(color: Colors.black, width: 0.5),
+                    ),
+                    child: Checkbox(
+                      checkColor: primaryColor,
+                      activeColor: Colors.white,
+                      side: BorderSide.none,
+                      value: checkedWasherDryerHookups,
+                      onChanged: ((value) {
+                        setState(() {
+                          checkedWasherDryerHookups =
+                              !checkedWasherDryerHookups;
+                        });
+                      }),
+                    ),
                   )
                 ],
               ),
+              SizedBox(
+                height: defaultMargin * 1.3,
+              ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Pool(12)'),
-                  Checkbox(
-                    value: false,
-                    onChanged: ((value) {
-                      print('changed');
-                    }),
+                  Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: defaultMargin * 0.5),
+                        child: Icon(Icons.apartment_outlined),
+                      ),
+                      Text('Pool(12)'),
+                    ],
+                  ),
+                  Container(
+                    height: 20,
+                    width: 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      border: Border.all(color: Colors.black, width: 0.5),
+                    ),
+                    child: Checkbox(
+                      checkColor: primaryColor,
+                      activeColor: Colors.white,
+                      side: BorderSide.none,
+                      value: checkedPool,
+                      onChanged: ((value) {
+                        setState(() {
+                          checkedPool = !checkedPool;
+                        });
+                      }),
+                    ),
                   )
                 ],
               ),
+              SizedBox(
+                height: defaultMargin * 1.3,
+              ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Fitness Center (12)'),
-                  Checkbox(
-                    value: false,
-                    onChanged: ((value) {
-                      print('changed');
-                    }),
+                  Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: defaultMargin * 0.5),
+                        child: Icon(Icons.apartment_outlined),
+                      ),
+                      Text('Fitness Center (12)'),
+                    ],
+                  ),
+                  Container(
+                    height: 20,
+                    width: 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      border: Border.all(color: Colors.black, width: 0.5),
+                    ),
+                    child: Checkbox(
+                      checkColor: primaryColor,
+                      activeColor: Colors.white,
+                      side: BorderSide.none,
+                      value: checkedFitnessCenter,
+                      onChanged: ((value) {
+                        setState(() {
+                          checkedFitnessCenter = !checkedFitnessCenter;
+                        });
+                      }),
+                    ),
                   )
                 ],
               ),
+              SizedBox(
+                height: defaultMargin * 1.3,
+              ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Laundry Facilities (12)'),
-                  Checkbox(
-                    value: false,
-                    onChanged: ((value) {
-                      print('changed');
-                    }),
+                  Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: defaultMargin * 0.5),
+                        child: Icon(Icons.apartment_outlined),
+                      ),
+                      Text('Laundry Facilities (12)'),
+                    ],
+                  ),
+                  Container(
+                    height: 20,
+                    width: 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      border: Border.all(color: Colors.black, width: 0.5),
+                    ),
+                    child: Checkbox(
+                      checkColor: primaryColor,
+                      activeColor: Colors.white,
+                      side: BorderSide.none,
+                      value: checkedLaundry,
+                      onChanged: ((value) {
+                        setState(() {
+                          checkedLaundry = !checkedLaundry;
+                        });
+                      }),
+                    ),
                   )
                 ],
               ),
+              SizedBox(
+                height: defaultMargin * 1.3,
+              ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Wheelchair Access (12)'),
-                  Checkbox(
-                    value: false,
-                    onChanged: ((value) {
-                      print('changed');
-                    }),
+                  Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: defaultMargin * 0.5),
+                        child: Icon(Icons.apartment_outlined),
+                      ),
+                      Text('Wheelchair Access (12)'),
+                    ],
+                  ),
+                  Container(
+                    height: 20,
+                    width: 20,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      border: Border.all(color: Colors.black, width: 0.5),
+                    ),
+                    child: Checkbox(
+                      checkColor: primaryColor,
+                      activeColor: Colors.white,
+                      side: BorderSide.none,
+                      value: checkedWheelchair,
+                      onChanged: ((value) {
+                        setState(() {
+                          checkedWheelchair = !checkedWheelchair;
+                        });
+                      }),
+                    ),
                   )
                 ],
               ),
