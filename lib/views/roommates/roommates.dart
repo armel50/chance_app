@@ -365,7 +365,7 @@ class _RoommateState extends State<Roommate> {
                 padding: const EdgeInsets.all(15),
                 backgroundColor: Colors.green,
               ),
-              child: const Text('AH'),
+              child: const Text('CK'),
               onPressed: () {
                 Navigator.push(
                   context,

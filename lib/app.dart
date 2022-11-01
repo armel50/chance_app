@@ -40,7 +40,9 @@ class _AppState extends State<App> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             // Matches tab
-            icon: Icon(Icons.people_outline),
+            icon:  ImageIcon(
+            AssetImage('assets/images/people.png')
+           ),
             label: 'Roomies',
             backgroundColor: Colors.white,
           ),
@@ -54,7 +56,9 @@ class _AppState extends State<App> {
           ),
           BottomNavigationBarItem(
             // More tab
-            icon: Icon(Icons.more_horiz_outlined),
+            icon: ImageIcon(
+            AssetImage('assets/images/more.png')
+           ),
             label: 'More',
             backgroundColor: Colors.white,
           ),
