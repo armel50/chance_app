@@ -46,7 +46,9 @@ class _AppState extends State<App> {
           ),
           BottomNavigationBarItem(
             // Rooms or listing tab
-            icon: Icon(Icons.apartment_outlined),
+           icon:  ImageIcon(
+            AssetImage('assets/images/apartment.png')
+           ),
             label: 'Rooms',
             backgroundColor: Colors.white,
           ),
