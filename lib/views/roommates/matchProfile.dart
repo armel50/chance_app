@@ -222,22 +222,6 @@ class matchProfile extends StatelessWidget {
                   ),
                 ),
                 Align(
-                  alignment: Alignment.bottomCenter,
-                  child: FloatingActionButton(
-                    heroTag: "superLike",
-                    onPressed: () {
-                      print('Super like');
-                      updateUser();
-                    },
-                    backgroundColor: Colors.white,
-                    child: const Icon(
-                      Icons.star_rounded,
-                      color: Colors.yellow,
-                      size: 40,
-                    ),
-                  ),
-                ),
-                Align(
                   alignment: Alignment.bottomRight,
                   child: FloatingActionButton(
                     heroTag: "swipeRight",
