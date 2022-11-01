@@ -250,8 +250,10 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                   Row(
                     children: [
                       Container(
+  height: 20,
+                        width: 20,
                         margin: EdgeInsets.only(right: defaultMargin * 0.5),
-                        child: Icon(Icons.apartment_outlined),
+                        child: Image.asset('assets/images/apartment.png'),
                       ),
                       Text('Apartments (52)'),
                     ],
@@ -287,7 +289,7 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                     children: [
                       Container(
                         margin: EdgeInsets.only(right: defaultMargin * 0.5),
-                        child: Icon(Icons.apartment_outlined),
+                        child: Icon(FlatIcons.house),
                       ),
                       Text('Houses (2)'),
                     ],
@@ -322,8 +324,10 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                   Row(
                     children: [
                       Container(
+                        height: 20,
+                        width: 20,
                         margin: EdgeInsets.only(right: defaultMargin * 0.5),
-                        child: Icon(Icons.apartment_outlined),
+                        child: Image.asset('assets/images/condo.png'),
                       ),
                       Text('Condos (0)'),
                     ],
@@ -358,8 +362,10 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                   Row(
                     children: [
                       Container(
+                         height: 20,
+                        width: 20,
                         margin: EdgeInsets.only(right: defaultMargin * 0.5),
-                        child: Icon(Icons.apartment_outlined),
+                        child: Image.asset('assets/images/townhouse.png'),
                       ),
                       Text('Townhomes (20)'),
                     ],
@@ -416,8 +422,10 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                   Row(
                     children: [
                       Container(
+                          height: 20,
+                        width: 20,
                         margin: EdgeInsets.only(right: defaultMargin * 0.5),
-                        child: Icon(Icons.apartment_outlined),
+                        child:  Image.asset('assets/images/dog.png'),
                       ),
                       Text('Dog Friendly (20)'),
                     ],
@@ -452,8 +460,10 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                   Row(
                     children: [
                       Container(
+                             height: 20,
+                        width: 20,
                         margin: EdgeInsets.only(right: defaultMargin * 0.5),
-                        child: Icon(Icons.apartment_outlined),
+                        child: Image.asset('assets/images/cat-face.png'),
                       ),
                       Text('Cat Friendly (10)'),
                     ],
@@ -510,8 +520,10 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                   Row(
                     children: [
                       Container(
+                           height: 20,
+                        width: 20,
                         margin: EdgeInsets.only(right: defaultMargin * 0.5),
-                        child: Icon(Icons.apartment_outlined),
+                        child: Image.asset('assets/images/washer.png'),
                       ),
                       Text('In Unit Washer & Dryer (10)'),
                     ],
@@ -546,8 +558,10 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                   Row(
                     children: [
                       Container(
+                         height: 20,
+                        width: 20,
                         margin: EdgeInsets.only(right: defaultMargin * 0.5),
-                        child: Icon(Icons.apartment_outlined),
+                        child: Image.asset('assets/images/air-conditioner.png'),
                       ),
                       Text('Air Conditioning (10)'),
                     ],
@@ -582,8 +596,10 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                   Row(
                     children: [
                       Container(
+                          height: 20,
+                        width: 20,
                         margin: EdgeInsets.only(right: defaultMargin * 0.5),
-                        child: Icon(Icons.apartment_outlined),
+                        child: Image.asset('assets/images/parking.png'),
                       ),
                       Text('Parking (10)'),
                     ],
@@ -618,8 +634,10 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                   Row(
                     children: [
                       Container(
+                          height: 20,
+                        width: 20,
                         margin: EdgeInsets.only(right: defaultMargin * 0.5),
-                        child: Icon(Icons.apartment_outlined),
+                        child: Image.asset('assets/images/dish-washer.png'),
                       ),
                       Text('Dishwasher (10)'),
                     ],
@@ -654,8 +672,10 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                   Row(
                     children: [
                       Container(
+                           height: 20,
+                        width: 20,
                         margin: EdgeInsets.only(right: defaultMargin * 0.5),
-                        child: Icon(Icons.apartment_outlined),
+                        child: Image.asset('assets/images/lightbulb.png'),
                       ),
                       Text('Utilities included (12)'),
                     ],
@@ -690,8 +710,10 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                   Row(
                     children: [
                       Container(
+                         height: 20,
+                        width: 20,
                         margin: EdgeInsets.only(right: defaultMargin * 0.5),
-                        child: Icon(Icons.apartment_outlined),
+                        child: Image.asset('assets/images/outlet.png'),
                       ),
                       Text('Washer & Dryer Hookups (12)'),
                     ],
@@ -727,8 +749,10 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                   Row(
                     children: [
                       Container(
+                          height: 20,
+                        width: 20,
                         margin: EdgeInsets.only(right: defaultMargin * 0.5),
-                        child: Icon(Icons.apartment_outlined),
+                        child: Image.asset('assets/images/swimming-pool.png'),
                       ),
                       Text('Pool(12)'),
                     ],
@@ -763,8 +787,10 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                   Row(
                     children: [
                       Container(
+                         height: 20,
+                        width: 20,
                         margin: EdgeInsets.only(right: defaultMargin * 0.5),
-                        child: Icon(Icons.apartment_outlined),
+                        child: Image.asset('assets/images/dumbell.png'),
                       ),
                       Text('Fitness Center (12)'),
                     ],
@@ -799,8 +825,10 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                   Row(
                     children: [
                       Container(
+                          height: 20,
+                        width: 20,
                         margin: EdgeInsets.only(right: defaultMargin * 0.5),
-                        child: Icon(Icons.apartment_outlined),
+                        child: Image.asset('assets/images/laundry-basket.png'),
                       ),
                       Text('Laundry Facilities (12)'),
                     ],
@@ -835,8 +863,10 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                   Row(
                     children: [
                       Container(
+                          height: 20,
+                        width: 20,
                         margin: EdgeInsets.only(right: defaultMargin * 0.5),
-                        child: Icon(Icons.apartment_outlined),
+                        child: Image.asset('assets/images/disabled.png'),
                       ),
                       Text('Wheelchair Access (12)'),
                     ],
@@ -881,7 +911,7 @@ class _FilterViewScreenState extends State<FilterViewScreen> {
                 height: defaultMargin * 1.5,
               ),
               Text(
-                'Squre Footage Range',
+                'Square Footage Range',
                 style: TextStyle(fontSize: defaultTitleFontSize),
               ),
               SizedBox(
