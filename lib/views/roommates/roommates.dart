@@ -381,10 +381,8 @@ class _RoommateState extends State<Roommate> {
               ),
             ),
             IconButton(
-              icon: const Icon(
-                Icons.message_outlined,
-              ),
-              tooltip: 'Open shopping cart',
+              icon: ImageIcon(AssetImage('assets/images/chat.png'), size:30,),
+              tooltip: 'Messages',
               onPressed: () {
                 // handle the press
                 Navigator.push(
