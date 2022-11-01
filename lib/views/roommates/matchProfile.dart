@@ -37,8 +37,8 @@ class matchProfile extends StatelessWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                          SizedBox(
-                          height: defaultMargin*2,
+                        SizedBox(
+                          height: defaultMargin * 2,
                         ),
                         Text(
                           'About Me',
@@ -68,8 +68,8 @@ class matchProfile extends StatelessWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                           SizedBox(
-                          height: defaultMargin*2,
+                        SizedBox(
+                          height: defaultMargin * 2,
                         ),
                         Text(
                           'My Preferences',
@@ -78,7 +78,7 @@ class matchProfile extends StatelessWidget {
                             fontSize: 16,
                           ),
                         ),
-                           SizedBox(
+                        SizedBox(
                           height: defaultMargin,
                         ),
                         Wrap(
@@ -88,25 +88,78 @@ class matchProfile extends StatelessWidget {
                             var _icon;
                             switch (e['title']) {
                               case 'Gender':
-                                _icon = Icons.transgender_rounded;
+                                _icon = ImageIcon(
+                                  AssetImage('assets/images/gender.png'),
+                                  color: primaryColor,
+                                );
                                 break;
                               case 'Age':
-                                _icon = Icons.date_range_outlined;
+                                _icon = ImageIcon(
+                                  AssetImage('assets/images/age.png'),
+                                  color: primaryColor,
+                                );
                                 break;
                               case 'Kids':
-                                _icon = Icons.child_friendly_outlined;
+                                _icon = ImageIcon(
+                                  AssetImage('assets/images/boy.png'),
+                                  color: primaryColor,
+                                );
                                 break;
                               case 'Pets':
-                                _icon = Icons.pets_outlined;
+                                _icon = ImageIcon(
+                                  AssetImage('assets/images/pawprint.png'),
+                                  color: primaryColor,
+                                );
                                 break;
                               case 'Location':
-                                _icon = Icons.location_on_outlined;
+                                _icon = ImageIcon(
+                                  AssetImage('assets/images/map.png'),
+                                  color: primaryColor,
+                                );
                                 break;
                               case 'Lease':
-                                _icon = Icons.document_scanner_outlined;
+                                _icon = ImageIcon(
+                                  AssetImage('assets/images/signature.png'),
+                                  color: primaryColor,
+                                );
                                 break;
                               case 'Smoking':
-                                _icon = Icons.smoking_rooms_outlined;
+                                _icon = ImageIcon(
+                                  AssetImage('assets/images/smoking.png'),
+                                  color: primaryColor,
+                                );
+                                break;
+                              case 'Apartment':
+                                _icon = ImageIcon(
+                                  AssetImage('assets/images/apartment.png'),
+                                  color: primaryColor,
+                                );
+                                break;
+                              case 'House':
+                                _icon = ImageIcon(
+                                  AssetImage('assets/images/home.png'),
+                                  color: primaryColor,
+                                );
+
+                                break;
+                              case 'Condo':
+                                _icon = ImageIcon(
+                                  AssetImage('assets/images/condo.png'),
+                                  color: primaryColor,
+                                );
+                                break;
+                              case 'Private Bathroom':
+                                _icon = ImageIcon(
+                                  AssetImage('assets/images/bath.png'),
+                                  color: primaryColor,
+                                );
+
+                                break;
+                              case 'Private Bedroom':
+                                _icon = ImageIcon(
+                                  AssetImage('assets/images/double-bed.png'),
+                                  color: primaryColor,
+                                );
                                 break;
 
                               default:
@@ -116,11 +169,10 @@ class matchProfile extends StatelessWidget {
                                 label: Row(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    if (_icon != null)
-                                      Icon(
-                                        _icon,
-                                        color: primaryColor,
-                                      ),
+                                    if (_icon != null) _icon,
+                                    SizedBox(
+                                      width: defaultMargin * 0.5,
+                                    ),
                                     Text(
                                       "${e['title']}: ",
                                       style: const TextStyle(
@@ -138,7 +190,7 @@ class matchProfile extends StatelessWidget {
                       ]),
                   decoration: BoxDecoration(
                       border: Border.all(
-                          color:Color.fromARGB(255, 158, 168, 176),
+                          color: Color.fromARGB(255, 158, 168, 176),
                           width: 0.3)),
                 ),
               ],
