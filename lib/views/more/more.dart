@@ -111,7 +111,9 @@ class _MoreState extends State<More> {
             ),
             ListTile(
               contentPadding: EdgeInsets.all(defaultPadding),
-              leading: Icon(Icons.favorite_outline),
+              leading:  ImageIcon(
+            AssetImage('assets/images/love.png')
+           ),
               title: Text('Bookmarks'),
               trailing: Icon(Icons.arrow_forward_ios_outlined),
             ),
@@ -129,13 +131,17 @@ class _MoreState extends State<More> {
             ),
             ListTile(
               contentPadding: EdgeInsets.all(defaultPadding),
-              leading: Icon(Icons.person_outline),
+              leading:  ImageIcon(
+            AssetImage('assets/images/single-user.png')
+           ),
               title: Text('Who Likes Me'),
               trailing: Icon(Icons.arrow_forward_ios_outlined),
             ),
             ListTile(
               contentPadding: EdgeInsets.all(defaultPadding),
-              leading: Icon(Icons.house_outlined),
+              leading:  ImageIcon(
+            AssetImage('assets/images/menu.png')
+           ),
               title: Text('My Listings (2)'),
               trailing: Icon(Icons.arrow_forward_ios_outlined),
             ),
@@ -153,19 +159,25 @@ class _MoreState extends State<More> {
             ),
             ListTile(
               contentPadding: EdgeInsets.all(defaultPadding),
-              leading: Icon(Icons.settings_outlined),
+              leading:  ImageIcon(
+            AssetImage('assets/images/settings.png')
+           ),
               title: Text('App Settings'),
               trailing: Icon(Icons.arrow_forward_ios_outlined),
             ),
             ListTile(
               contentPadding: EdgeInsets.all(defaultPadding),
-              leading: Icon(Icons.contact_support_outlined),
+              leading: ImageIcon(
+            AssetImage('assets/images/information.png')
+           ),
               title: Text('FAQ'),
               trailing: Icon(Icons.arrow_forward_ios_outlined),
             ),
             ListTile(
               contentPadding: EdgeInsets.all(defaultPadding),
-              leading: Icon(Icons.support_agent_rounded),
+              leading: ImageIcon(
+            AssetImage('assets/images/customer-service.png')
+           ),
               title: Text('Support'),
               trailing: Icon(Icons.arrow_forward_ios_outlined),
             )
